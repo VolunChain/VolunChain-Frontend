@@ -9,6 +9,8 @@
   --foreground: #ededed;
   --primary: #ef565d;
   --secondary: #73b9eb;
+  --blue: #53ACEC;
+  --grey: #CACACA;
   --tertiary: #071117;
 }
 
@@ -22,7 +24,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif, var(--font-fustat);
+  font-family: var(--font-fustat), Arial, Helvetica, sans-serif;
+}
+
+.font-kantumruy {
+  font-family: 'Kantumruy', var(--font-fustat), Arial, Helvetica, sans-serif;
 }
 
 ::-webkit-scrollbar {
