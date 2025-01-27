@@ -18,7 +18,7 @@ const LandingNavbar = () => {
   return (
     <nav className="w-full flex items-center justify-between p-6 mt-[-10px]"> {/* Ajusté el margen superior aquí */}
       <Link href="/" className="text-white text-2xl font-semibold">
-        <div className="w-40 h-40 lg:w-[226px] lg:h-[113px]">
+        <div className="w-40 lg:w-[226px] lg:h-[113px]">
           <img src="/logo.svg" className="w-full h-full" alt="logo" />
         </div>
       </Link>

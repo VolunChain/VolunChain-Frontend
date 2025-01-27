@@ -14,6 +14,12 @@ export default {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        blue: "var(--blue)",
+        grey: "var(--grey)",
+      },
+      fontFamily: {
+        fustat: ['var(--font-fustat)', 'sans-serif'],
+        kantumruy: ['Kantumruy', 'var(--font-fustat)', 'sans-serif'],
       },
     },
   },
