@@ -13,10 +13,10 @@ const Notfound = () => {
    return (
       <div className="  min-h-[90vh] sm:min-h-screen h-auto flex justify-center items-center pt-20  relative ">
          <Image src={NotFound} alt="not-found" />
-         <section className="  absolute bottom-8 sm:bottom-0 flex justiify-center items-center flex-col w-full">
-            <p className="text-[#ffffff] text-[18px] font-[800] text-center"> 404 - Page Not Found</p>
+         <section className="  absolute bottom-8 sm:bottom-[-1.5rem] flex justiify-center items-center flex-col w-full">
+            <p className="text-secondary text-[18px] font-[800] text-center"> 404 - Page Not Found</p>
             <br />
-            <Button variant="primary" textColor="secondary" className="text-white m-auto flex gap-2" onClick={handleBack}>
+            <Button variant="primary" textColor="secondary" className=" m-auto flex gap-2" onClick={handleBack}>
                <LucideArrowLeft /> Go Back 
             </Button>
          </section>
