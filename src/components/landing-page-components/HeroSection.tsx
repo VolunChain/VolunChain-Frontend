@@ -6,7 +6,7 @@ function HeroSection() {
   return (
     <>
       <LandingNavbar />
-      <div className="w-full flex justify-center py-4 px-4 md:px-8 mt-[-20px]"> {/* Ajusté el margen superior aquí */}
+      <div className="w-full flex justify-center py-4 px-4 md:px-8 mt-[-20px]">
         <Button
           variant="secondary"
           textColor="secondary"
@@ -26,24 +26,32 @@ function HeroSection() {
       </div>
       <main className="flex flex-col justify-center items-center text-center px-4 md:px-6 lg:px-8">
         <div className="w-full max-w-[1076px] mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-white leading-tight max-w-[800px] mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-white leading-tight max-w-[800px] mx-auto">
             VolunChain: Transforming Volunteering, One Block at a Time
           </h2>
-          <p className="text-lg text-text-muted mb-6 text-white max-w-[650px] mx-auto">
+          <p className="text-base md:text-lg text-text-muted mb-6 text-white max-w-[650px] mx-auto px-4 md:px-0">
             Organizations post volunteer opportunities, and users join projects
             they love. Earn unique NFTs as proof of your impact!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="primary" textColor="secondary" className="text-tertiary">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 md:px-0">
+            <Button
+              variant="primary"
+              textColor="secondary"
+              className="text-tertiary w-full sm:w-auto"
+            >
               I'm a Foundation
             </Button>
-            <Button variant="secondary" textColor="secondary" className="!bg-background">
+            <Button
+              variant="secondary"
+              textColor="secondary"
+              className="!bg-background w-full sm:w-auto"
+            >
               Start as Volunteer
             </Button>
           </div>
         </div>
       </main>
-      <div className="w-full relative mt-[30px]"> 
+      <div className="w-full relative mt-[30px] overflow-hidden">
         <div className="absolute left-0 right-0 h-full bg-gradient-to-b from-transparent from-0% via-[#070B1F40] via-50% to-[#070B1F] to-90% z-10" />
         <div className="flex justify-center max-w-screen-lg mx-auto">
           <Image

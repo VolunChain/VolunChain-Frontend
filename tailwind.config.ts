@@ -18,8 +18,8 @@ export default {
         grey: "var(--grey)",
       },
       fontFamily: {
-        fustat: ['var(--font-fustat)', 'sans-serif'],
-        kantumruy: ['Kantumruy', 'var(--font-fustat)', 'sans-serif'],
+        fustat: ["var(--font-fustat)", "sans-serif"],
+        kantumruy: ["Kantumruy", "var(--font-fustat)", "sans-serif"],
       },
     },
   },
