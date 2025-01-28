@@ -16,7 +16,7 @@ function HeroSection() {
       <motion.div 
         className="w-full flex justify-center py-4 px-4 md:px-8 mt-[-20px]"
         variants={fadeInUp}
-      >
+    
         <Button
           variant="secondary"
           textColor="secondary"
