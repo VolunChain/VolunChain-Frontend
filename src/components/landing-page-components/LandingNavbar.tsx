@@ -28,37 +28,39 @@ const LandingNavbar = () => {
         <Menu onClick={toggleMenu} />
       </div>
       <div
-        className={`lg:flex items-center space-x-6 transition-all duration-300 ease-in-out ${
+        className={`lg:flex items-center justify-center space-x-6 transition-all duration-300 ease-in-out ${
           isMenuOpen
             ? "block absolute top-20 left-0 w-full py-4 bg-background"
             : "hidden"
         } lg:block lg:static lg:w-auto lg:space-x-6`}
       >
-        <div className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-x-7">
-          {menuItems.map((link) => (
-            <Link key={link.path} href={link.path}>
-              <p className="text-white text-lg font-semibold">{link.label}</p>
-            </Link>
-          ))}
-        </div>
+        <div className="flex flex-col lg:flex-row items-center gap-4">
+          <div className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-x-7">
+            {menuItems.map((link) => (
+              <Link key={link.path} href={link.path}>
+                <p className="text-white text-lg font-semibold">{link.label}</p>
+              </Link>
+            ))}
+          </div>
 
-        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 px-5 lg:px-0">
-          <Button
-            variant="secondary"
-            className="border-2 border-secondary text-secondary"
-            textColor="secondary"
-            type="button"
-          >
-            Contact us
-          </Button>
-          <Button
-            variant="primary"
-            className="bg-primary border border-primary "
-            textColor="black"
-            type="button"
-          >
-            Log in
-          </Button>
+          <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 px-5 lg:px-0">
+            <Button
+              variant="secondary"
+              className="border-2 border-secondary text-secondary"
+              textColor="secondary"
+              type="button"
+            >
+              Contact us
+            </Button>
+            <Button
+              variant="primary"
+              className="bg-primary border border-primary "
+              textColor="black"
+              type="button"
+            >
+              Log in
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

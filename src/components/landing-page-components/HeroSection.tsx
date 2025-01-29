@@ -45,7 +45,7 @@ function HeroSection() {
       >
         <div className="w-full max-w-5xl mx-auto space-y-6 md:space-y-8">
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight md:leading-snug lg:leading-normal max-w-3xl mx-auto"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight md:leading-snug lg:leading-normal max-w-3xl mx-auto"
             variants={fadeInUp}
           >
             VolunChain: Transforming Volunteering, One Block at a Time
@@ -64,7 +64,7 @@ function HeroSection() {
             <motion.div 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
+              className="w-[90%] sm:w-auto"
             >
               <Button variant="primary" textColor="secondary" className="text-tertiary w-full">
                 I'm a Foundation
@@ -73,7 +73,7 @@ function HeroSection() {
             <motion.div 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
+              className="w-[90%] sm:w-auto"
             >
               <Button variant="secondary" textColor="secondary" className="!bg-background w-full">
                 Start as Volunteer

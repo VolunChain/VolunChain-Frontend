@@ -17,7 +17,7 @@ const OurMission = () => {
           variants={fadeInUp}
         >
           <motion.h2 
-            className="text-2xl text-[#73B9EB] mb-2"
+            className="text-xl text-[#73B9EB] mb-2"
             variants={fadeInUp}
           >
             Our Mission
