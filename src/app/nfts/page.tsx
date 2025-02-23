@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import DashboardNav from "@/components/dashboard/DashboardNav";
 import NFTFliter from "@/components/nft/NFTFliter";
-import NFTSection from "@/components/nft/NFTSection";
 import { FilterIcon } from "lucide-react";
 
 const NFTPage = () => {
@@ -27,7 +26,6 @@ const NFTPage = () => {
             isOpen={isFilterOpen}
             onClose={() => setIsFilterOpen(false)}
           />
-          <NFTSection selectedLabels={selectedLabels} />
         </div>
       </div>
     </div>
