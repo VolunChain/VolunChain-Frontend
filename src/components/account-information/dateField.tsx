@@ -1,50 +1,26 @@
-import { useState } from "react";
-import { Pencil, Check } from "lucide-react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 interface DateFieldProps {
-  label: string;
   name: string;
   value: Date;
   onChange: (date: Date | null) => void;
+  disabled?: boolean;
 }
 
-const DateField = ({ label, name, value, onChange }: DateFieldProps) => {
-  const [isEditing, setIsEditing] = useState(false);
-
+const DateField = ({ name, value, onChange, disabled = false }: DateFieldProps) => {
   return (
     <div className="flex flex-col gap-1 w-full">
-      <div className="flex justify-between items-center">
-        <span className="text-sm font-medium text-[#53ACEC]">{label}</span>
-        <button
-          onClick={() => setIsEditing(!isEditing)}
-          className="flex items-center gap-1 text-gray-400 hover:text-white transition-colors"
-        >
-          {isEditing ? <Check size={18} /> : <Pencil size={18} />}
-          <span className="text-sm">{isEditing ? "Save" : "Edit"}</span>
-        </button>
-      </div>
-      <div
-        className={`w-full p-2 border rounded-lg bg-[#0F172A] text-white transition-all duration-200 ${
-          isEditing ? "border-[#EF565D]" : "border-[#53ACEC]"
-        }`}
-      >
-        {isEditing ? (
-          <DatePicker
-            selected={value}
-            onChange={(date) => {
-              if (date) onChange(date);
-              setIsEditing(false);
-            }}
-            className="w-full bg-transparent outline-none border-none text-white"
-            calendarClassName="custom-datepicker"
-            dateFormat="MM/dd/yyyy"
-            popperClassName="custom-popper"
-          />
-        ) : (
-          <p>{value.toLocaleDateString()}</p>
-        )}
+      <div className="w-full p-2 border rounded-lg bg-[#0F112B] text-white transition-all duration-200 border-[#53ACEC]">
+        <DatePicker
+          selected={value}
+          onChange={(date) => date && onChange(date)}
+          className="w-full bg-transparent outline-none border-none text-white"
+          calendarClassName="custom-datepicker"
+          dateFormat="MM/dd/yyyy"
+          popperClassName="custom-popper"
+          disabled={disabled}
+        />
       </div>
 
       <style jsx global>{`

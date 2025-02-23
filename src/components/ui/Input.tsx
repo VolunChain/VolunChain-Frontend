@@ -9,6 +9,7 @@ interface InputProps {
   name?: string;
   className?: string;
   error?: string;
+  disabled?: boolean;
 }
 
 const Input = ({
@@ -19,6 +20,7 @@ const Input = ({
   onChange,
   name,
   className,
+  disabled = false, 
 }: InputProps) => {
   return (
     <div className={`flex flex-col mb-4 ${className}`}>
@@ -34,7 +36,9 @@ const Input = ({
         onChange={onChange}
         id={name}
         name={name}
-        className="p-2 text-sm border rounded-[10px] bg-transparent text-white border-[#73b9eb] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary pl-[15px] pr-[90px] py-[10px] w-full h-full"
+        disabled={disabled} 
+        className="p-2 text-sm border rounded-[10px] bg-transparent text-white border-[#73b9eb] 
+        placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary pl-[15px] pr-[90px] py-[10px] w-full h-full"
       />
     </div>
   );
