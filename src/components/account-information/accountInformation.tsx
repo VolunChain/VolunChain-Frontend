@@ -6,7 +6,7 @@ import Input from "@/components/ui/Input";
 import ProfilePicture from "./profilePicture";
 import Button from "@/components/ui/Button";
 import DateField from "./dateField";
-import EditButton from "./editButton";
+import { Pencil } from "lucide-react";
 
 const AccountInformation = () => {
   const [formData, setFormData] = useState({
@@ -21,15 +21,9 @@ const AccountInformation = () => {
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   });
 
-  const [editingField, setEditingField] = useState<string | null>(null);
-
   const handleChange = (name: string, value: string | Date | null) => {
     if (value === null) return;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const toggleEditing = (field: string) => {
-    setEditingField(editingField === field ? null : field);
   };
 
   return (
@@ -48,7 +42,10 @@ const AccountInformation = () => {
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-[#53ACEC]">First Name</label>
-              <EditButton isEditing={editingField === "firstName"} onClick={() => toggleEditing("firstName")} />
+              <div className="flex items-center text-gray-400">
+                <Pencil size={16} className="mr-1" />
+                <span className="text-sm">Edit</span>
+              </div>
             </div>
             <Input
               label=""
@@ -56,7 +53,6 @@ const AccountInformation = () => {
               value={formData.firstName}
               onChange={(e) => handleChange("firstName", e.target.value)}
               className=" [&>label]:text-[#53ACEC]"
-              disabled={editingField !== "firstName"}
             />
           </div>
 
@@ -76,14 +72,16 @@ const AccountInformation = () => {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               className=" [&>label]:text-[#53ACEC]"
-              disabled
             />
           </div>
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-[#53ACEC]">Last Name</label>
-              <EditButton isEditing={editingField === "lastName"} onClick={() => toggleEditing("lastName")} />
+              <div className="flex items-center text-gray-400">
+                <Pencil size={16} className="mr-1" />
+                <span className="text-sm">Edit</span>
+              </div>
             </div>
             <Input
               label=""
@@ -91,14 +89,16 @@ const AccountInformation = () => {
               value={formData.lastName}
               onChange={(e) => handleChange("lastName", e.target.value)}
               className=" [&>label]:text-[#53ACEC]"
-              disabled={editingField !== "lastName"}
             />
           </div>
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-[#53ACEC]">Phone</label>
-              <EditButton isEditing={editingField === "phone"} onClick={() => toggleEditing("phone")} />
+              <div className="flex items-center text-gray-400">
+                <Pencil size={16} className="mr-1" />
+                <span className="text-sm">Edit</span>
+              </div>
             </div>
             <Input
               label=""
@@ -106,14 +106,16 @@ const AccountInformation = () => {
               value={formData.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
               className=" [&>label]:text-[#53ACEC]"
-              disabled={editingField !== "phone"}
             />
           </div>
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-[#53ACEC]">Country</label>
-              <EditButton isEditing={editingField === "country"} onClick={() => toggleEditing("country")} />
+              <div className="flex items-center text-gray-400">
+                <Pencil size={16} className="mr-1" />
+                <span className="text-sm">Edit</span>
+              </div>
             </div>
             <Input
               label=""
@@ -121,27 +123,31 @@ const AccountInformation = () => {
               value={formData.country}
               onChange={(e) => handleChange("country", e.target.value)}
               className=" [&>label]:text-[#53ACEC]"
-              disabled={editingField !== "country"}
             />
           </div>
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-[#53ACEC]">Date of Birth</label>
-              <EditButton isEditing={editingField === "dateOfBirth"} onClick={() => toggleEditing("dateOfBirth")} />
+              <div className="flex items-center text-gray-400">
+                <Pencil size={16} className="mr-1" />
+                <span className="text-sm">Edit</span>
+              </div>
             </div>
             <DateField
               name="dateOfBirth"
               value={formData.dateOfBirth}
               onChange={(date) => handleChange("dateOfBirth", date ?? new Date())}
-              disabled={editingField !== "dateOfBirth"}
             />
           </div>
 
           <div className="relative flex flex-col gap-2 w-full col-span-2">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-[#53ACEC]">Biography</label>
-              <EditButton isEditing={editingField === "biography"} onClick={() => toggleEditing("biography")} />
+              <div className="flex items-center text-gray-400">
+                <Pencil size={16} className="mr-1" />
+                <span className="text-sm">Edit</span>
+              </div>
             </div>
             <TextArea
               label=""
@@ -149,13 +155,12 @@ const AccountInformation = () => {
               value={formData.biography}
               onChange={(e) => handleChange("biography", e.target.value)}
               className="h-40 w-full [&>label]:text-[#53ACEC]"
-              disabled={editingField !== "biography"}
             />
           </div>
         </div>
 
         <div className="flex justify-end mt-6">
-          <Button onClick={() => setEditingField(null)} variant="primary">
+          <Button variant="primary">
             Save Changes
           </Button>
         </div>
