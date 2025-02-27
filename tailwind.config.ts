@@ -17,6 +17,7 @@ export default {
         blue: "var(--blue)",
         grey: "var(--grey)",
         link: "var(--link)",
+        bgsecondary: "var(--bg-secondary)",
       },
       fontFamily: {
         fustat: ['var(--font-fustat)', 'sans-serif'],
