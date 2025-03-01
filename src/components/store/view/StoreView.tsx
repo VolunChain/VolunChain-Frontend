@@ -2,8 +2,8 @@
 
 import Button from "@/components/ui/Button";
 import { Heart, MessageCircle, Plus } from "lucide-react";
-import postOne from "@/../public/assets/store/post-image.png";
-import profileImage from "@/../public/assets/store/profile-img.png";
+import postOne from "@/../public/assets/dashboard/post-2.png";
+import profileImage from "@/../public/assets/dashboard/nft.png";
 import Image from "next/image";
 
 export default function StoreView() {
