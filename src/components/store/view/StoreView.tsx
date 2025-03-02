@@ -12,12 +12,12 @@ export default function StoreView() {
       id: 1,
       profileImage: profileImage,
       profileName: "Dog Goods for Good Dogs",
-      profileUserName: "@dogs_goods",
+      profileUserName: "@dog_goods",
       postTitle: "Join us this week for a great experience with the doggos!",
       postDescription:
-        "We will be giving food to them and raising money for the cause this weekend",
+        "We will be giving food to them and raising money for the cause this weekend.",
       postImage: postOne,
-      likes: "23.1k",
+      likes: "231k",
       tags: ["Social Services", "Animal Welfare"],
     },
     {
@@ -36,7 +36,7 @@ export default function StoreView() {
     <div className="min-h-screen bg-[#0F112B] p-8">
       <div className="max-w-[1440px] mx-auto overflow-x-auto">
         {storeData.map((data) => (
-          <div key={data.id}>
+          <div key={data.id} className="bg-[#0F112B] rounded-lg mb-8">
             <div className="flex items-center gap-6 my-10">
               <Image
                 src={data.profileImage}
@@ -44,7 +44,7 @@ export default function StoreView() {
                 className="w-[80px] h-[80px] rounded-[58px]"
               />
               <div>
-                <p className="text-[22px] font-[700] text-[#73b9eb}">
+                <p className="text-[22px] font-[700] text-[#73b9eb]">
                   {data.profileName}
                 </p>
                 <p className="text-[14px] font-[300] text-[#a8a8a8]">
@@ -54,11 +54,17 @@ export default function StoreView() {
             </div>
 
             <div>
-              <p className="text-[22px] font-[600]">{data.postTitle}</p>
+              <p className="text-[22px] font-[600] text-white">
+                {data.postTitle}
+              </p>
               <p className="text-[18px] font-[400] text-[#9d9d9d] mb-2">
                 {data.postDescription}
               </p>
-              <Image src={data.postImage} alt="" />
+              <Image
+                src={data.postImage}
+                alt=""
+                className="w-full rounded-md"
+              />
             </div>
 
             <div className="flex flex-col md:items-center justify-between pt-6 md:flex-row">
@@ -90,14 +96,13 @@ export default function StoreView() {
                   variant="outline"
                   className="text-[#53ACEC] border-[#53ACEC] hover:bg-[#53ACEC]/10 rounded-[46px] border-2 text-sm mt-3 md:mt-0"
                 >
-                  <Plus />
+                  <Plus className="mr-1" />
                   Follow
                 </Button>
               </div>
             </div>
           </div>
         ))}
-        {/*  */}
       </div>
     </div>
   );
