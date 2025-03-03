@@ -36,7 +36,10 @@ export default function StoreView() {
     <div className="min-h-screen bg-[#0F112B] p-8">
       <div className="max-w-[1440px] mx-auto overflow-x-auto">
         {storeData.map((data) => (
-          <div key={data.id} className="bg-[#0F112B] rounded-lg mb-8">
+          <div
+            key={data.id}
+            className="bg-[#0F112B] rounded-xl mb-8 p-6 shadow-lg"
+          >
             <div className="flex items-center gap-6 my-10">
               <Image
                 src={data.profileImage}
