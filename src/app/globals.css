@@ -49,6 +49,13 @@ body {
   display: none;
 }
 
+.force-blue-text,
+.force-blue-text * {
+  color: var(--blue) !important;
+}
+button .force-blue-text {
+  color: var(--blue) !important;
+}
 
 
 

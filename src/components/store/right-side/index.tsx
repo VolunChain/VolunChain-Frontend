@@ -111,16 +111,16 @@ export default function RightSide() {
             </span>
           ))}
         </div>
-        <div className=" sm:ml-0">
-          <Button
-            textColor="blue"
-            variant="outline"
-            className="rounded-full bg-blue-500 border-blue-500 text-white px-8 py-2 flex items-center gap-2 text-base"
-          >
-            <Plus className="h-5 w-5" />
-            Follow
-          </Button>
-        </div>
+        <div className="sm:ml-0">
+  <Button
+    textColor="blue"
+    variant="outline"
+    className="rounded-full border-blue-500 px-8 py-2 flex items-center gap-2 text-base bg-transparent hover:bg-blue-500 hover:text-white transition-colors"
+  >
+  <Plus className="h-5 w-5 force-blue-text" />
+    <span className="force-blue-text">Follow</span>
+  </Button>
+</div>
       </div>
     </div>
   );
