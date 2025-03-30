@@ -13,13 +13,15 @@ export default function StoreComponent() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        <div className="md:col-span-4">
+        <div className="md:col-span-3">
           <LeftSide />
         </div>
-        <div className="md:col-span-8">
+        <div className="md:col-span-6">
           <RightSide />
           <RightSide />
         </div>
+        <div className="md:col-span-3">
+            </div>
       </div>
     </div>
   );

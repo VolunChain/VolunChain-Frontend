@@ -46,7 +46,7 @@ const post: PostProps = {
 
 export default function RightSide() {
   return (
-    <div className="relative flex flex-col w-full bg-[#0F112B] p-6 rounded-xl">
+    <div className="relative flex flex-col w-full bg-[#0F112B] p-8 rounded-xl">
       <div className="mb-3 flex items-center gap-3">
         <div className="h-12 w-12 overflow-hidden rounded-full">
           <Image
@@ -73,12 +73,12 @@ export default function RightSide() {
       </div>
 
       {post.content.image && (
-        <div className="w-full mb-4 overflow-hidden rounded-lg">
+        <div className="w-full mb-4 overflow-hidden rounded-lg aspect-[2/1]">
           <Image
             src={post.content.image || "/placeholder.svg"}
             alt="Post image"
-            width={800}
-            height={400}
+            width={600}
+            height={300}
             className="w-full object-cover"
             priority={true}
           />
@@ -112,15 +112,15 @@ export default function RightSide() {
           ))}
         </div>
         <div className="sm:ml-0">
-  <Button
-    textColor="blue"
-    variant="outline"
-    className="rounded-full border-blue-500 px-8 py-2 flex items-center gap-2 text-base bg-transparent hover:bg-blue-500 hover:text-white transition-colors"
-  >
-  <Plus className="h-5 w-5 force-blue-text" />
-    <span className="force-blue-text">Follow</span>
-  </Button>
-</div>
+          <Button
+            textColor="blue"
+            variant="outline"
+            className="rounded-full border-blue-500 px-8 py-2 flex items-center gap-2 text-base bg-transparent hover:bg-blue-500 hover:text-white transition-colors"
+          >
+            <Plus className="h-5 w-5 force-blue-text" />
+            <span className="force-blue-text">Follow</span>
+          </Button>
+        </div>
       </div>
     </div>
   );
