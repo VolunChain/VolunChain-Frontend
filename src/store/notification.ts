@@ -59,10 +59,9 @@ export const useNotificationStore = create<NotificationState>()(
             partialize: (state) => ({
                 notifications: state.notifications,
             }),
-            onRehydrateStorage: (storedState) => {
+            onRehydrateStorage: () => {
                 return (state, error) => {
                     if (error) return
-                    console.log(storedState);
                     if (!state) return;
 
                     const now = Date.now();
