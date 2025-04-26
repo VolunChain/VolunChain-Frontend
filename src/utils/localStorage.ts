@@ -1,7 +1,7 @@
-export const isClient = typeof window !== 'undefined';
+export const isClient = typeof window !== "undefined";
 export const getItem = <T>(key: string, defaultValue: T): T => {
   if (!isClient) return defaultValue;
-  
+
   try {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : defaultValue;
@@ -12,7 +12,7 @@ export const getItem = <T>(key: string, defaultValue: T): T => {
 };
 export const setItem = <T>(key: string, value: T): void => {
   if (!isClient) return;
-  
+
   try {
     localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
@@ -21,7 +21,7 @@ export const setItem = <T>(key: string, value: T): void => {
 };
 export const removeItem = (key: string): void => {
   if (!isClient) return;
-  
+
   try {
     localStorage.removeItem(key);
   } catch (error) {
