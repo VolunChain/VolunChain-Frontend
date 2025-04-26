@@ -17,12 +17,12 @@ const createAsyncTask = (name: string, delay: number, shouldReject = false) => {
 
 describe("useAsyncQueue", () => {
   beforeEach(() => {
-    jest.useFakeTimers(); // Use fake timers to control async delays
+    jest.useFakeTimers();
   });
 
   afterEach(() => {
     jest.clearAllTimers();
-    jest.useRealTimers(); // Reset to real timers after each test
+    jest.useRealTimers();
   });
 
   it("executes tasks sequentially in FIFO order", async () => {
@@ -41,31 +41,27 @@ describe("useAsyncQueue", () => {
       );
     });
 
-    // Advance timers to complete Task 1
     act(() => {
       jest.advanceTimersByTime(100);
     });
 
-    // Wait for Task 1 to resolve
     await act(async () => {
-      await Promise.resolve(); // Flush microtasks
+      await Promise.resolve();
     });
 
     expect(logSpy).toHaveBeenCalledWith("Task 1 done");
-    expect(logSpy).not.toHaveBeenCalledWith("Task 2 done"); // Task 2 hasn't run yet
+    expect(logSpy).not.toHaveBeenCalledWith("Task 2 done");
 
-    // Advance timers to complete Task 2
     act(() => {
       jest.advanceTimersByTime(100);
     });
 
-    // Wait for Task 2 to resolve
     await act(async () => {
-      await Promise.resolve(); // Flush microtasks
+      await Promise.resolve();
     });
 
     expect(logSpy).toHaveBeenCalledWith("Task 2 done");
-    expect(logSpy.mock.calls).toEqual([["Task 1 done"], ["Task 2 done"]]); // Correct order
+    expect(logSpy.mock.calls).toEqual([["Task 1 done"], ["Task 2 done"]]);
 
     logSpy.mockRestore();
   });
@@ -74,23 +70,23 @@ describe("useAsyncQueue", () => {
     const { result } = renderHook(() => useAsyncQueue());
     const task = createAsyncTask("Task", 100);
 
-    expect(result.current.isProcessing).toBe(false); // Initially false
+    expect(result.current.isProcessing).toBe(false);
 
     await act(async () => {
       result.current.enqueue(task);
     });
 
-    expect(result.current.isProcessing).toBe(true); // True while task is running
+    expect(result.current.isProcessing).toBe(true);
 
     act(() => {
-      jest.advanceTimersByTime(100); // Complete the task
+      jest.advanceTimersByTime(100);
     });
 
     await act(async () => {
-      await Promise.resolve(); // Flush microtasks
+      await Promise.resolve();
     });
 
-    expect(result.current.isProcessing).toBe(false); // False after task completes
+    expect(result.current.isProcessing).toBe(false);
   });
 
   it("handles task errors correctly", async () => {
@@ -105,15 +101,15 @@ describe("useAsyncQueue", () => {
     });
 
     act(() => {
-      jest.advanceTimersByTime(100); // Trigger the error
+      jest.advanceTimersByTime(100);
     });
 
     await act(async () => {
-      await Promise.resolve(); // Flush microtasks
+      await Promise.resolve();
     });
 
     expect(errorCaught).toEqual(new Error("Task Error Task failed"));
-    expect(result.current.isProcessing).toBe(false); // Queue continues after error
+    expect(result.current.isProcessing).toBe(false);
   });
 
   it("returns a promise that resolves after task completion", async () => {
@@ -146,7 +142,6 @@ describe("useAsyncQueue", () => {
 
     const task1 = createAsyncTask("Task 1", 100);
 
-    // Add and complete the first task
     await act(async () => {
       result.current.enqueue(() =>
         task1().then(() => console.log("Task 1 done"))
@@ -164,7 +159,6 @@ describe("useAsyncQueue", () => {
     expect(logSpy).toHaveBeenCalledWith("Task 1 done");
     expect(result.current.isProcessing).toBe(false);
 
-    // Now add a second task after the queue was empty
     const task2 = createAsyncTask("Task 2", 100);
 
     await act(async () => {
