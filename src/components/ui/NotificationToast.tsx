@@ -3,8 +3,8 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import { useNotifications } from "../../hooks/useNotifications";
-import { Notification } from "../../store/notifications";
+import { useNotifications } from "@hooks/useNotifications";
+import { Notification } from "@store/notifications";
 import { clsx } from "clsx";
 
 const NotificationToast: React.FC = () => {
