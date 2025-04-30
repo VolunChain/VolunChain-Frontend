@@ -1,28 +1,29 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 type ValidatorResult = string | true;
 type ValidatorFn<T> = (value: T) => Promise<ValidatorResult> | ValidatorResult;
 
 interface ValidationResult {
-  isValid: boolean;
-  error: string | null;
+  isValid: boolean | null;
+  error: string | null | undefined;
   isLoading: boolean;
+  revalidate: () => void;
 }
 
 export function useDebouncedValidator<T>(
   value: T,
   validator: ValidatorFn<T>,
-  delay: number = 300
+  delay: number = 300,
+  validateImmediately: boolean = false
 ): ValidationResult {
-  const [isValid, setIsValid] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [error, setError] = useState<string | null | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const latestValue = useRef<T>(value);
-  const abortControllerRef = useRef<AbortController | null>(null);
 
-  const validate = async (valueToValidate: T) => {
+  const validate = useCallback(async (valueToValidate: T) => {
     try {
       setIsLoading(true);
       const result = await Promise.resolve(validator(valueToValidate));
@@ -45,7 +46,11 @@ export function useDebouncedValidator<T>(
         setIsLoading(false);
       }
     }
-  };
+  }, [validator]);
+
+  const revalidate = useCallback(() => {
+    validate(value);
+  }, [validate, value]);
 
   useEffect(() => {
     latestValue.current = value;
@@ -54,25 +59,20 @@ export function useDebouncedValidator<T>(
       clearTimeout(timeoutRef.current);
     }
 
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
-
-    abortControllerRef.current = new AbortController();
-
-    timeoutRef.current = setTimeout(() => {
+    if (validateImmediately) {
       validate(value);
-    }, delay);
+    } else {
+      timeoutRef.current = setTimeout(() => {
+        validate(value);
+      }, delay);
+    }
 
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
-      }
     };
-  }, [value, delay]);
+  }, [value, delay, validate, validateImmediately]);
 
-  return { isValid, error, isLoading };
+  return { isValid, error, isLoading, revalidate };
 } 

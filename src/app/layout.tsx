@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Fustat } from "next/font/google";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import "./fonts.css";
+import NotificationToast from "@/components/ui/NotificationToast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,8 @@ const fustat = Fustat({
 
 export const metadata: Metadata = {
   title: "Volunchain",
-  description: "A platform revolutionizing volunteer work with blockchain technology, connecting volunteers and organizations with transparency and efficiency.",
+  description:
+    "A platform revolutionizing volunteer work with blockchain technology, connecting volunteers and organizations with transparency and efficiency.",
   keywords: "Volunteering, Blockchain, NFTs, Community, Charity",
   authors: [{ name: "Volunchain Team" }],
 };
@@ -40,6 +42,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" sizes="any" />
       </head>
       <body className="flex flex-col justify-between min-h-screen text-text-light overflow-x-hidden">
+        <NotificationToast />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
