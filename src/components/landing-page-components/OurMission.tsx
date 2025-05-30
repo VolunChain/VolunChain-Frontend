@@ -1,8 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, listItemReveal, scrollReveal } from "../../animations/variants";
+import { useTranslation } from "react-i18next";
 
 const OurMission = () => {
+  const { t } = useTranslation();
+
+  const missionPoints = [
+    t('mission.points.bridge'),
+    t('mission.points.motivate'),
+    t('mission.points.impact')
+  ];
+
   return (
     <motion.section id="mission"
       className="mt-16 py-16 px-6"
@@ -20,13 +31,13 @@ const OurMission = () => {
             className="text-2xl text-[#73B9EB] mb-2"
             variants={fadeInUp}
           >
-            Our Mission
+            {t('mission.title')}
           </motion.h2>
           <motion.h3
             className="text-3xl md:text-5xl font-bold text-white"
             variants={fadeInUp}
           >
-            Revolutionizing Volunteerism <br /> with Blockchain
+            {t('mission.subtitle')}
           </motion.h3>
         </motion.div>
 
@@ -34,9 +45,7 @@ const OurMission = () => {
           className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto"
           variants={fadeInUp}
         >
-          By using blockchain's transparency and efficiency, we connect volunteers
-          with organizations, fostering collaboration and impactful experiences
-          in a secure and scalable ecosystem.
+          {t('mission.description')}
         </motion.p>
 
         <motion.div
@@ -60,11 +69,7 @@ const OurMission = () => {
             className="text-left text-gray-300 space-y-12 md:w-1/2"
             variants={staggerContainer}
           >
-            {[
-              "We bridge the gap between individuals and organizations.",
-              "Motivating engagement rewarding volunteers with innovative incentives like NFT collectibles to recognize and inspire their contributions.",
-              "Create an impact developing a scalable, community-driven platform where volunteering is accessible and rewarding for everyone."
-            ].map((text, index) => (
+            {missionPoints.map((text, index) => (
               <motion.li
                 key={index}
                 custom={index}

@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../ui/Button";
 import LandingNavbar from "./LandingNavbar";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, scaleUp } from "../../animations/variants";
+import { useTranslation } from "react-i18next";
 
 function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <motion.div id="home"
       initial="hidden"
@@ -30,14 +35,14 @@ function HeroSection() {
               className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs rounded-full bg-secondary text-tertiary whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
             >
-              New
+              {t('hero.newBadge')}
             </motion.span>
             <span className="text-white hidden sm:inline">
-              Take a Look to the Latest
+              {t('hero.latestOpportunities')}
             </span>
-            <span className="text-white sm:hidden">Latest</span>
+            <span className="text-white sm:hidden">{t('hero.latestOpportunitiesShort')}</span>
             <span className="text-secondary whitespace-nowrap">
-              Volunteers Opportunities
+              {t('hero.volunteerOpportunities')}
             </span>
           </Button>
         </motion.div>
@@ -52,14 +57,13 @@ function HeroSection() {
             className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-white leading-tight max-w-[800px] mx-auto"
             variants={fadeInUp}
           >
-            VolunChain: Transforming Volunteering, One Block at a Time
+            {t('hero.title')}
           </motion.h2>
           <motion.p
             className="text-lg text-text-muted mb-6 text-white max-w-[650px] mx-auto"
             variants={fadeInUp}
           >
-            Organizations post volunteer opportunities, and users join projects
-            they love. Earn unique NFTs as proof of your impact!
+            {t('hero.subtitle')}
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -70,7 +74,7 @@ function HeroSection() {
               whileTap={{ scale: 0.95 }}
             >
               <Button variant="primary" textColor="secondary" className="text-tertiary">
-                I'm a Foundation
+                {t('hero.foundationButton')}
               </Button>
             </motion.div>
             <motion.div
@@ -78,7 +82,7 @@ function HeroSection() {
               whileTap={{ scale: 0.95 }}
             >
               <Button variant="secondary" textColor="secondary" className="!bg-background">
-                Start as Volunteer
+                {t('hero.volunteerButton')}
               </Button>
             </motion.div>
           </motion.div>
