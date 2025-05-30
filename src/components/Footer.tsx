@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="text-white flex justify-center mx-auto items-center py-16">
       <div className="container mx-auto px-4 md:px-6 lg:px-6 xl:px-0">
@@ -10,16 +15,13 @@ export default function Footer() {
           <div className="md:col-span-2 lg:w-[550px] flex flex-col items-center md:items-start">
             <Image src="/logo.svg" alt="Logo" width={260} height={130} />
             <p className=" font-[family-name:var(--font-fustat)] font-normal text-base md:text-base -mt-5 text-center md:text-left">
-              VolunChain is a blockchain-powered platform connecting volunteers
-              with organizations. It ensures transparency, security, and rewards
-              participation through incentives like NFT collectibles, fostering
-              collaboration in a Web3-driven ecosystem.
+              {t('footer.description')}
             </p>
           </div>
           {/* Navigation Section */}
           <div className="md:col-span-1 lg:w-[220px] lg:ml-24 mt-10 flex flex-col items-center md:items-start">
             <h3 className="font-[family-name:var(--font-fustat)] font-extrabold text-lg md:text-lg">
-              Links
+              {t('footer.links')}
             </h3>
             <ul className=" grid grid-rows-1 gap-2 mt-4 text-center md:text-left">
               <li>
@@ -27,7 +29,7 @@ export default function Footer() {
                   href="#explore"
                   className="hover:text-gray-400 transition font-[family-name:var(--font-fustat)] font-normal text-base md:text-base"
                 >
-                  Explore Volunteering
+                  {t('footer.exploreVolunteering')}
                 </a>
               </li>
               <li>
@@ -35,7 +37,7 @@ export default function Footer() {
                   href="#terms"
                   className="hover:text-gray-400 transition font-[family-name:var(--font-fustat)] font-normal text-base md:text-base"
                 >
-                  Terms & Conditions
+                  {t('footer.termsConditions')}
                 </a>
               </li>
               <li>
@@ -43,7 +45,7 @@ export default function Footer() {
                   href="#privacy"
                   className="hover:text-gray-400 transition font-[family-name:var(--font-fustat)] font-normal text-base md:text-base"
                 >
-                  Privacy Policy
+                  {t('footer.privacyPolicy')}
                 </a>
               </li>
               <li>
@@ -51,7 +53,7 @@ export default function Footer() {
                   href="#contact"
                   className="hover:text-gray-400 transition font-[family-name:var(--font-fustat)] font-normal text-base md:text-base"
                 >
-                  Contact Us
+                  {t('footer.contactUs')}
                 </a>
               </li>
             </ul>
@@ -59,14 +61,14 @@ export default function Footer() {
           {/* Contact Section */}
           <div className="md:col-span-1 lg:w-[288px] lg:ml-12 mt-10 flex flex-col items-center md:items-start">
             <h3 className="font-[family-name:var(--font-fustat)] font-extrabold text-lg md:text-lg">
-              Contact
+              {t('footer.contact')}
             </h3>
             <div className="space-y-2 grid grid-rows-1 gap-3 text-center md:text-left">
               <a
                 href="mailto:contact@volunchain.com"
                 className="hover:text-gray-400 transition font-[family-name:var(--font-fustat)] font-normal text-base md:text-base mt-3"
               >
-                contact@volunchain.com
+                {t('footer.email')}
               </a>
             </div>
 
