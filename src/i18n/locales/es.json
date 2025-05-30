@@ -1,0 +1,122 @@
+{
+  "common": {
+    "new": "Nuevo",
+    "contact": "Contacto",
+    "links": "Enlaces",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "opportunities": "Oportunidades",
+    "dashboard": "Panel",
+    "profile": "Perfil",
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "register": "Registrarse",
+    "users": "Usuarios",
+    "socialMedia": "Redes Sociales",
+    "contactUs": "Contáctanos"
+  },
+  "hero": {
+    "newBadge": "Nuevo",
+    "latestOpportunities": "Echa un Vistazo a las Últimas",
+    "latestOpportunitiesShort": "Últimas",
+    "volunteerOpportunities": "Oportunidades de Voluntariado",
+    "title": "VolunChain: Transformando el Voluntariado, Un Bloque a la Vez",
+    "subtitle": "Las organizaciones publican oportunidades de voluntariado, y los usuarios se unen a proyectos que aman. ¡Gana NFTs únicos como prueba de tu impacto!",
+    "foundationButton": "Soy una Fundación",
+    "volunteerButton": "Comenzar como Voluntario",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber Más"
+  },
+  "mission": {
+    "title": "Nuestra Misión",
+    "subtitle": "Revolucionando el Voluntariado con Blockchain",
+    "description": "Utilizando la transparencia y eficiencia del blockchain, conectamos voluntarios con organizaciones, fomentando la colaboración y experiencias impactantes en un ecosistema seguro y escalable.",
+    "points": {
+      "bridge": "Construimos puentes entre individuos y organizaciones.",
+      "motivate": "Motivamos la participación recompensando a los voluntarios con incentivos innovadores como coleccionables NFT para reconocer e inspirar sus contribuciones.",
+      "impact": "Creamos impacto desarrollando una plataforma escalable impulsada por la comunidad donde el voluntariado es accesible y gratificante para todos."
+    }
+  },
+  "stats": {
+    "title": "Nuestra aplicación conecta fundaciones con voluntarios, creando oportunidades impactantes para ambos.",
+    "description": "¡Te ayudaremos a lograr lo mismo como empresa o voluntario!",
+    "getStarted": "Comencemos",
+    "labels": {
+      "foundations": "Fundaciones",
+      "users": "Usuarios",
+      "volunteers": "Voluntarios Exitosos",
+      "peopleHelped": "Personas Ayudadas"
+    }
+  },
+  "social": {
+    "label": "Redes Sociales",
+    "title": "Únete a la Cadena",
+    "description": "Conéctate con nosotros en redes sociales y contribuye a construir un mejor ecosistema para el voluntariado. ¡Mantente actualizado, comparte tus pensamientos y colabora con nuestra creciente comunidad!",
+    "platforms": {
+      "twitterDescription": "Noticias y Actualizaciones",
+      "telegramDescription": "Discusiones",
+      "githubDescription": "Recursos"
+    }
+  },
+  "footer": {
+    "description": "VolunChain es una plataforma impulsada por blockchain que conecta voluntarios con organizaciones. Garantiza transparencia, seguridad y recompensa la participación a través de incentivos como coleccionables NFT, fomentando la colaboración en un ecosistema impulsado por Web3.",
+    "links": "Enlaces",
+    "exploreVolunteering": "Explorar Voluntariado",
+    "termsConditions": "Términos y Condiciones",
+    "privacyPolicy": "Política de Privacidad",
+    "contactUs": "Contáctanos",
+    "contact": "Contacto",
+    "email": "contact@volunchain.com"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "rememberMe": "Recordarme",
+    "signInWith": "Iniciar sesión con",
+    "signUpWith": "Registrarse con",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "loginSuccess": "¡Inicio de sesión exitoso!",
+    "registerSuccess": "¡Registro exitoso!"
+  },
+  "dashboard": {
+    "welcome": "Bienvenido",
+    "overview": "Resumen",
+    "myOpportunities": "Mis Oportunidades",
+    "myNFTs": "Mis NFTs",
+    "statistics": "Estadísticas",
+    "recentActivity": "Actividad Reciente"
+  },
+  "opportunities": {
+    "title": "Oportunidades de Voluntariado",
+    "search": "Buscar oportunidades...",
+    "filter": "Filtrar",
+    "category": "Categoría",
+    "location": "Ubicación",
+    "date": "Fecha",
+    "apply": "Aplicar",
+    "viewDetails": "Ver Detalles",
+    "requirements": "Requisitos",
+    "description": "Descripción",
+    "organization": "Organización",
+    "duration": "Duración",
+    "noOpportunities": "No se encontraron oportunidades"
+  }
+} 
