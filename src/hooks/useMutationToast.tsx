@@ -45,7 +45,7 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
       ...style,
     };
 
-    // Handle success state
+    // success state
     if (mutation.status === 'success') {
       toast.success(
         (t) => (
@@ -67,7 +67,7 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
       );
     }
 
-    // Handle error state
+    // error state
     if (mutation.status === 'error') {
       const message = mutation.error instanceof Error && mutation.error.message
         ? mutation.error.message
@@ -93,7 +93,6 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
     }
   }, [mutation.status, mutation.error, successMessage, errorMessage, duration, position, style, ]);
 
-  // Return mutation for chaining or further use
   return mutation;
 };
 
