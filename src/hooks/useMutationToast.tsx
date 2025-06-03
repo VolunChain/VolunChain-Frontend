@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import type { UseMutationResult } from '@tanstack/react-query';
 
-// Configuration type for toast options
 interface ToastConfig {
   duration?: number;
   position?: 'top-center' | 'top-right' | 'top-left' | 'bottom-center' | 'bottom-right' | 'bottom-left';
@@ -15,7 +14,6 @@ interface ToastConfig {
   errorIcon?: string;
 }
 
-// Hook definition with enhanced styling
 const useMutationToast = <TData, TError, TVariables, TContext>(
   mutation: UseMutationResult<TData, TError, TVariables, TContext>,
   config: ToastConfig = {}
@@ -29,7 +27,6 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
   } = config;
 
   useEffect(() => {
-    // Base styles for all toasts
     const baseStyle: React.CSSProperties = {
       borderRadius: '12px',
       padding: '16px 24px',
@@ -45,7 +42,6 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
       ...style,
     };
 
-    // success state
     if (mutation.status === 'success') {
       toast.success(
         (t) => (
@@ -67,7 +63,6 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
       );
     }
 
-    // error state
     if (mutation.status === 'error') {
       const message = mutation.error instanceof Error && mutation.error.message
         ? mutation.error.message
