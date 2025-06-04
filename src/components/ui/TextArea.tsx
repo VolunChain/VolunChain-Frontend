@@ -21,18 +21,22 @@ const TextArea = ({
   return (
     <div className={`flex flex-col mb-4 ${className}`}>
       {label && (
-        <label htmlFor={name} className="mb-2 text-sm font-bold text-white">
+        <label
+          htmlFor={name}
+          className="mb-2 text-sm font-bold dark:text-white"
+        >
           {label}
         </label>
       )}
       <textarea
-        className="p-2 text-sm border rounded-[10px] bg-transparent text-white border-[#73b9eb] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary pl-[15px] pr-[90px] py-[10px] w-full h-full"
+        className="p-2 text-sm border rounded-[10px] bg-transparent dark:text-white border-[#73b9eb] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary pl-[15px] pr-[90px] py-[10px] w-full h-full"
         onChange={onChange}
         placeholder={placeholder}
         value={value}
         id={name}
         name={name}
-        rows={4} cols={50}
+        rows={4}
+        cols={50}
       ></textarea>
     </div>
   );

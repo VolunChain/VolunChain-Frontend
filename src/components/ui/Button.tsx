@@ -24,7 +24,7 @@ const Button = ({
         "cursor-pointer py-3 px-6 rounded-full w-auto font-semibold border-2",
         className,
         {
-          "text-white": textColor === "white",
+          "dark:text-white": textColor === "white",
           "text-black": textColor === "black",
           "text-primary": textColor === "primary",
           "text-secondary": textColor === "secondary",

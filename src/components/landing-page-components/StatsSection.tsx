@@ -33,8 +33,9 @@ const StatsSection = () => {
   ];
 
   return (
-    <motion.section id="users"
-      className="text-white mt-[4rem] flex justify-center items-center py-16"
+    <motion.section
+      id="users"
+      className="dark:text-white mt-[4rem] flex justify-center items-center py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -47,19 +48,19 @@ const StatsSection = () => {
             variants={fadeInUp}
           >
             <motion.h3 className="text-[1.5em]" variants={fadeInUp}>
-              {t('stats.title')}
+              {t("stats.title")}
             </motion.h3>
-            <motion.p className="text-grey" variants={fadeInUp}>
-              {t('stats.description')}
+            <motion.p className="dark:text-white" variants={fadeInUp}>
+              {t("stats.description")}
             </motion.p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
-                variant="primary" 
-                textColor="black" 
+              <Button
+                variant="primary"
+                textColor="black"
                 type="button"
-                aria-label={t('stats.ariaLabels.getStarted')}
+                aria-label={t("stats.ariaLabels.getStarted")}
               >
-                {t('stats.getStarted')}
+                {t("stats.getStarted")}
               </Button>
             </motion.div>
           </motion.div>
@@ -72,7 +73,7 @@ const StatsSection = () => {
                 variants={staggerContainer}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="text-center bg-[#0F112B] p-6 py-12 sm:p-10 md:px-8 sm:py-16 rounded-lg"
+                className="text-center text-white bg-[#0F112B] p-6 py-12 sm:p-10 md:px-8 sm:py-16 rounded-lg"
               >
                 <motion.p
                   className="text-[2em] font-kantumruy md:text-[2.5em] capitalize font-semibold"

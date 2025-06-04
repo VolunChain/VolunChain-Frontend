@@ -66,7 +66,7 @@ export default function RightSide() {
       </div>
 
       <div className="mb-4">
-        <h1 className="text-xl font-semibold text-white mb-1">
+        <h1 className="text-xl font-semibold dark:text-white mb-1">
           {post.content.title}
         </h1>
         <p className="text-gray-400">{post.content.body}</p>
@@ -87,12 +87,12 @@ export default function RightSide() {
 
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-8 min-w-[200px]">
-          <button className="flex items-center gap-2 text-gray-300 hover:text-red-500">
+          <button className="flex items-center gap-2 dark:text-white text-gray-600 hover:text-red-500">
             <Heart className="h-6 w-6" />
             <span className="text-base">{post.engagement.likes}</span>
           </button>
           {post.engagement.comments && (
-            <button className="flex items-center gap-2 text-gray-300 hover:text-gray-100">
+            <button className="flex items-center gap-2 dark:text-white text-gray-600 hover:text-gray-100">
               <MessageSquare className="h-6 w-6" />
               <span className="text-base">Comments</span>
             </button>
@@ -115,7 +115,7 @@ export default function RightSide() {
           <Button
             textColor="blue"
             variant="outline"
-            className="rounded-full border-blue-500 px-8 py-2 flex items-center gap-2 text-base bg-transparent hover:bg-blue-500 hover:text-white transition-colors"
+            className="rounded-full border-blue-500 px-8 py-2 flex items-center gap-2 text-base bg-transparent hover:bg-blue-500 hover:dark:text-white transition-colors"
           >
             <Plus className="h-5 w-5 force-blue-text" />
             <span className="force-blue-text">Follow</span>

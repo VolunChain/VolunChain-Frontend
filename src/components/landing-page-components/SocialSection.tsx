@@ -2,7 +2,13 @@
 
 import { Github, Send } from "lucide-react";
 import { motion } from "framer-motion";
-import { fadeInLeft, fadeInRight, stayCenter, scrollReveal, fadeInUp } from "@/animations/variants";
+import {
+  fadeInLeft,
+  fadeInRight,
+  stayCenter,
+  scrollReveal,
+  fadeInUp,
+} from "@/animations/variants";
 import { useTranslation } from "react-i18next";
 
 function XLogo() {
@@ -29,28 +35,29 @@ export default function SocialMediaSection() {
     {
       icon: XLogo,
       name: "Twitter",
-      description: t('social.platforms.twitterDescription'),
+      description: t("social.platforms.twitterDescription"),
       href: "https://x.com/volunchain",
       iconClassName: "text-sky-400",
     },
     {
       icon: Send,
       name: "Telegram",
-      description: t('social.platforms.telegramDescription'),
+      description: t("social.platforms.telegramDescription"),
       href: "https://t.me/volunchain",
       iconClassName: "text-red-400",
     },
     {
       icon: Github,
       name: "GitHub",
-      description: t('social.platforms.githubDescription'),
+      description: t("social.platforms.githubDescription"),
       href: "https://github.com/VolunChain",
       iconClassName: "text-sky-400",
     },
   ];
 
   return (
-    <motion.section id="social-media"
+    <motion.section
+      id="social-media"
       className="bg-[#0C0B1E] py-24 mt-[4rem]"
       initial="hidden"
       whileInView="visible"
@@ -66,19 +73,19 @@ export default function SocialMediaSection() {
             className="text-sky-400 text-lg font-medium"
             variants={fadeInUp}
           >
-            {t('social.label')}
+            {t("social.label")}
           </motion.span>
           <motion.h2
             className="text-white text-4xl md:text-5xl font-bold tracking-tighter"
             variants={fadeInUp}
           >
-            {t('social.title')}
+            {t("social.title")}
           </motion.h2>
           <motion.p
             className="text-gray-300 max-w-3xl text-lg md:text-xl leading-relaxed"
             variants={fadeInUp}
           >
-            {t('social.description')}
+            {t("social.description")}
           </motion.p>
         </motion.div>
 
@@ -89,9 +96,9 @@ export default function SocialMediaSection() {
               custom={index}
               variants={
                 index === 0
-                  ? fadeInLeft(3.5) 
+                  ? fadeInLeft(3.5)
                   : index === platforms.length - 1
-                  ? fadeInRight(3.5) 
+                  ? fadeInRight(3.5)
                   : stayCenter
               }
               viewport={{ once: true }}
@@ -104,7 +111,9 @@ export default function SocialMediaSection() {
                 className="flex-1 rounded-lg p-8 bg-[#0F112B] border border-[#1E1D4C] transition-transform duration-200"
               >
                 <div className="flex flex-col items-center space-y-4">
-                  <div className={`${platform.iconClassName} border-2 border-current rounded-lg p-3`}>
+                  <div
+                    className={`${platform.iconClassName} border-2 border-current rounded-lg p-3`}
+                  >
                     <div className="w-12 h-12">
                       <platform.icon
                         className="w-full h-full"
@@ -115,9 +124,7 @@ export default function SocialMediaSection() {
                   <h3 className="text-white text-2xl font-semibold">
                     {platform.name}
                   </h3>
-                  <p className="text-gray-100">
-                    {platform.description}
-                  </p>
+                  <p className="text-gray-100">{platform.description}</p>
                 </div>
               </a>
             </motion.div>

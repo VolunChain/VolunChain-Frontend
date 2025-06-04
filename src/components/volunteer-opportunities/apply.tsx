@@ -27,7 +27,7 @@ export default function Apply() {
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8">
       <div className="grid grid-cols-1 bg-[#151127] rounded-[30px] overflow-hidden max-w-4xl w-full shadow-lg">
         <div className="p-6 sm:p-8 md:p-14 bg-[#0F112A]">
-          <p className="text-white text-[2rem]">Company Name</p>
+          <p className="dark:text-white text-[2rem]">Company Name</p>
           <h1 className="text-[#53ACEC] text-xl sm:text-2xl font-bold mt-2.5">
             Paws & Hope Rescue Team
           </h1>

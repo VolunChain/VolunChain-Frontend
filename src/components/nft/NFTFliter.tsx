@@ -46,7 +46,7 @@ const NFTFliter: React.FC<NFTFliterProps> = ({
       }`}
     >
       <div className="flex justify-end md:hidden mb-3">
-        <button onClick={onClose} className="text-white">
+        <button onClick={onClose} className="dark:text-white">
           Close
         </button>
       </div>

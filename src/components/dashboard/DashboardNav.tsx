@@ -79,8 +79,8 @@ export default function DashboardNav() {
                   />
                   <span
                     className={clsx(
-                      "hidden md:block text-white text-sm mt-1",
-                      item.isActive ? "text-primary" : "text-white"
+                      "hidden md:block dark:text-white text-sm mt-1",
+                      item.isActive ? "text-primary" : "dark:text-white"
                     )}
                   >
                     {item.name}

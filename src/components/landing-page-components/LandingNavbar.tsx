@@ -24,12 +24,12 @@ const LandingNavbar = () => {
   return (
     <nav className="w-full flex items-center justify-between p-6 mt-[-10px]">
       {" "}
-      <Link href="/" className="text-white text-2xl font-semibold">
+      <Link href="/" className="dark:text-white text-2xl font-semibold">
         <div className="w-40 lg:w-[226px] lg:h-[113px]">
           <img src="/logo.svg" className="w-full h-full" alt="logo" />
         </div>
       </Link>
-      <div className="lg:hidden text-white">
+      <div className="lg:hidden dark:text-white">
         <Menu
           onClick={toggleMenu}
           aria-label={t("navbar.ariaLabels.mobileMenuToggle")}
@@ -63,7 +63,7 @@ const LandingNavbar = () => {
                 setIsMenuOpen(false);
               }}
             >
-              <p className="dark:text-white text-lg font-semibold">
+              <p className="dark:dark:text-white text-lg font-semibold">
                 {link.label}
               </p>
             </Link>

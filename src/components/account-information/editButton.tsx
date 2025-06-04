@@ -7,11 +7,15 @@ interface EditButtonProps {
 
 const EditButton = ({ isEditing, onClick }: EditButtonProps) => {
   return (
-    <button 
-      className="flex items-center text-gray-400 hover:text-white transition"
+    <button
+      className="flex items-center text-gray-400 hover:dark:text-white transition"
       onClick={onClick}
     >
-      {isEditing ? <Check size={16} className="mr-1" /> : <Pencil size={16} className="mr-1" />}
+      {isEditing ? (
+        <Check size={16} className="mr-1" />
+      ) : (
+        <Pencil size={16} className="mr-1" />
+      )}
       <span className="text-sm">{isEditing ? "Save" : "Edit"}</span>
     </button>
   );
