@@ -1,27 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Globe } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
-
-const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' }
-];
+import { languages, getLanguageByCode } from '@/i18n/languages';
 
 export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const { currentLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
+  const currentLang = getLanguageByCode(currentLanguage);
 
   const handleLanguageChange = (languageCode: string) => {
     if (i18n && typeof i18n.changeLanguage === 'function') {
@@ -34,7 +25,8 @@ export default function LanguageSwitcher() {
     setIsOpen(false);
   };
 
-  if (!isClient) {
+  // Simple client-side check without state
+  if (typeof window === 'undefined') {
     // Return a fallback during SSR
     return (
       <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-primary border border-gray-700">
@@ -56,6 +48,9 @@ export default function LanguageSwitcher() {
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-primary hover:bg-background-secondary transition-colors border border-gray-700 hover:border-secondary/50"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        aria-label={t('common.ariaLabels.languageSwitcher')}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
       >
         <Globe size={16} className="text-secondary" />
         <span className="text-white text-sm font-medium hidden sm:inline">
@@ -86,6 +81,8 @@ export default function LanguageSwitcher() {
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.15 }}
               className="absolute top-full left-0 mt-2 w-40 bg-background-primary border border-gray-700 rounded-lg shadow-xl z-20 overflow-hidden"
+              role="listbox"
+              aria-label={t('common.ariaLabels.languageSwitcher')}
             >
               {languages.map((language) => (
                 <motion.button
@@ -95,6 +92,9 @@ export default function LanguageSwitcher() {
                     language.code === currentLanguage ? 'bg-secondary/10 text-secondary' : 'text-white'
                   }`}
                   whileHover={{ x: 4 }}
+                  role="option"
+                  aria-selected={language.code === currentLanguage}
+                  aria-label={t('common.ariaLabels.selectLanguage', { language: language.name })}
                 >
                   <span className="text-lg">{language.flag}</span>
                   <span className="text-sm font-medium">{language.name}</span>
