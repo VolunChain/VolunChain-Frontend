@@ -3,25 +3,22 @@
 @tailwind utilities;
 
 :root {
-/*   --background: #ffffff;
-  --foreground: #171717; */
-  --background: #070b1f;
-  --foreground: #ededed;
+  --background: #ffffff;
+  --foreground: #171717;
   --primary: #ef565d;
   --secondary: #73b9eb;
-  --blue: #53ACEC;
-  --grey: #CACACA;
+  --blue: #53acec;
+  --grey: #cacaca;
   --tertiary: #071117;
-  --link: #2D9CDB;
-  --bg-secondary: #12092a;
+  --link: #2d9cdb;
+  --bg-secondary: #f8f9fa;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #07081f;
-    --foreground: #ededed;
-  }
-} */
+.dark {
+  --background: #070b1f;
+  --foreground: #ededed;
+  --bg-secondary: #12092a;
+}
 
 html {
   scroll-behavior: smooth;
@@ -31,10 +28,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-fustat), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-kantumruy {
-  font-family: 'Kantumruy', var(--font-fustat), Arial, Helvetica, sans-serif;
+  font-family: "Kantumruy", var(--font-fustat), Arial, Helvetica, sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -53,13 +51,12 @@ body {
 .force-blue-text * {
   color: var(--blue) !important;
 }
+
 button .force-blue-text {
   color: var(--blue) !important;
 }
 
-
-
-p{
+p {
   font-family: var(--font-fustat);
 }
 

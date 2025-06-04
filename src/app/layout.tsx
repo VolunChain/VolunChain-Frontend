@@ -5,7 +5,7 @@ import "./fonts.css";
 import NotificationToast from "@/components/ui/NotificationToast";
 import Providers from "./providers";
 import LayoutContent from "@/components/LayoutContent";
-
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,9 +49,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
         </Providers>
-        <LayoutContent>
-          {children}
-        </LayoutContent>
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );
