@@ -30,6 +30,7 @@ function HeroSection() {
             variant="secondary"
             textColor="secondary"
             className="mb-4 flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-background-primary hover:border-secondary/50 transition-colors text-sm sm:text-base"
+            aria-label={t('hero.ariaLabels.latestOpportunitiesButton')}
           >
             <motion.span
               className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs rounded-full bg-secondary text-tertiary whitespace-nowrap"
@@ -73,7 +74,12 @@ function HeroSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button variant="primary" textColor="secondary" className="text-tertiary">
+              <Button 
+                variant="primary" 
+                textColor="secondary" 
+                className="text-tertiary"
+                aria-label={t('hero.ariaLabels.foundationButton')}
+              >
                 {t('hero.foundationButton')}
               </Button>
             </motion.div>
@@ -81,7 +87,12 @@ function HeroSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button variant="secondary" textColor="secondary" className="!bg-background">
+              <Button 
+                variant="secondary" 
+                textColor="secondary" 
+                className="!bg-background"
+                aria-label={t('hero.ariaLabels.volunteerButton')}
+              >
                 {t('hero.volunteerButton')}
               </Button>
             </motion.div>

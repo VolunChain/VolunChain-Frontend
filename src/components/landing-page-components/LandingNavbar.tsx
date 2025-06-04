@@ -29,7 +29,12 @@ const LandingNavbar = () => {
         </div>
       </Link>
       <div className="lg:hidden text-white">
-        <Menu onClick={toggleMenu} />
+        <Menu 
+          onClick={toggleMenu} 
+          aria-label={t('navbar.ariaLabels.mobileMenuToggle')}
+          role="button"
+          tabIndex={0}
+        />
       </div>
       <div
         className={`lg:flex items-center space-x-6 transition-all duration-300 ease-in-out ${
@@ -71,14 +76,16 @@ const LandingNavbar = () => {
             className="border-2 border-secondary text-secondary"
             textColor="secondary"
             type="button"
+            aria-label={t('navbar.ariaLabels.contactUs')}
           >
             {t('navbar.contactUs')}
           </Button>
           <Button
             variant="primary"
-            className="bg-primary border border-primary "
+            className="bg-primary border border-primary"
             textColor="black"
             type="button"
+            aria-label={t('navbar.ariaLabels.login')}
           >
             {t('navbar.login')}
           </Button>

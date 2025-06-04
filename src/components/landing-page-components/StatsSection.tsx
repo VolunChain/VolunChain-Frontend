@@ -53,7 +53,12 @@ const StatsSection = () => {
               {t('stats.description')}
             </motion.p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="primary" textColor="black" type="button">
+              <Button 
+                variant="primary" 
+                textColor="black" 
+                type="button"
+                aria-label={t('stats.ariaLabels.getStarted')}
+              >
                 {t('stats.getStarted')}
               </Button>
             </motion.div>
