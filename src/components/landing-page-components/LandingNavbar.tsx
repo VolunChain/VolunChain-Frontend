@@ -1,18 +1,23 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import Button from "../ui/Button";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { Menu } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const LandingNavbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = (): void => setIsMenuOpen((prevState) => !prevState);
 
   const menuItems = [
-    { path: "#home", label: "Home" },
-    { path: "#mission", label: "Our Mission" },
-    { path: "#users", label: "Users" },
-    { path: "#social-media", label: "Social Media" },
+    { path: "#home", label: t('navbar.home') },
+    { path: "#mission", label: t('mission.title') },
+    { path: "#users", label: t('navbar.users') },
+    { path: "#social-media", label: t('navbar.socialMedia') },
   ];
 
   return (
@@ -24,7 +29,12 @@ const LandingNavbar = () => {
         </div>
       </Link>
       <div className="lg:hidden text-white">
-        <Menu onClick={toggleMenu} />
+        <Menu 
+          onClick={toggleMenu} 
+          aria-label={t('navbar.ariaLabels.mobileMenuToggle')}
+          role="button"
+          tabIndex={0}
+        />
       </div>
       <div
         className={`lg:flex items-center space-x-6 transition-all duration-300 ease-in-out ${
@@ -57,22 +67,27 @@ const LandingNavbar = () => {
           ))}
         </div>
 
-        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 px-5 lg:px-0">
+        <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4 px-5 lg:px-0">
+          <div className="lg:mr-2">
+            <LanguageSwitcher />
+          </div>
           <Button
             variant="secondary"
             className="border-2 border-secondary text-secondary"
             textColor="secondary"
             type="button"
+            aria-label={t('navbar.ariaLabels.contactUs')}
           >
-            Contact us
+            {t('navbar.contactUs')}
           </Button>
           <Button
             variant="primary"
-            className="bg-primary border border-primary "
+            className="bg-primary border border-primary"
             textColor="black"
             type="button"
+            aria-label={t('navbar.ariaLabels.login')}
           >
-            Log in
+            {t('navbar.login')}
           </Button>
         </div>
       </div>

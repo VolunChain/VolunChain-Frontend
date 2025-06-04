@@ -1,6 +1,9 @@
+"use client";
+
 import { Github, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInLeft, fadeInRight, stayCenter, scrollReveal, fadeInUp } from "@/animations/variants";
+import { useTranslation } from "react-i18next";
 
 function XLogo() {
   return (
@@ -20,25 +23,27 @@ function XLogo() {
 }
 
 export default function SocialMediaSection() {
+  const { t } = useTranslation();
+
   const platforms = [
     {
       icon: XLogo,
       name: "Twitter",
-      description: "News and Updates",
+      description: t('social.platforms.twitterDescription'),
       href: "https://x.com/volunchain",
       iconClassName: "text-sky-400",
     },
     {
       icon: Send,
       name: "Telegram",
-      description: "Discussions",
+      description: t('social.platforms.telegramDescription'),
       href: "https://t.me/volunchain",
       iconClassName: "text-red-400",
     },
     {
       icon: Github,
       name: "GitHub",
-      description: "Resources",
+      description: t('social.platforms.githubDescription'),
       href: "https://github.com/VolunChain",
       iconClassName: "text-sky-400",
     },
@@ -61,20 +66,19 @@ export default function SocialMediaSection() {
             className="text-sky-400 text-lg font-medium"
             variants={fadeInUp}
           >
-            Social Media
+            {t('social.label')}
           </motion.span>
           <motion.h2
             className="text-white text-4xl md:text-5xl font-bold tracking-tighter"
             variants={fadeInUp}
           >
-            Join The Chain
+            {t('social.title')}
           </motion.h2>
           <motion.p
             className="text-gray-300 max-w-3xl text-lg md:text-xl leading-relaxed"
             variants={fadeInUp}
           >
-            Connect with us on social media and contribute to building a better ecosystem for volunteering.
-            Stay updated, share your thoughts, and collaborate with our growing community!
+            {t('social.description')}
           </motion.p>
         </motion.div>
 
