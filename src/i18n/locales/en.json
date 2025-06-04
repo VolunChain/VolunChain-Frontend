@@ -1,0 +1,139 @@
+{
+  "common": {
+    "new": "New",
+    "contact": "Contact",
+    "links": "Links",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "ariaLabels": {
+      "languageSwitcher": "Change language",
+      "selectLanguage": "Select language: {{language}}"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "opportunities": "Opportunities",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "login": "Log in",
+    "logout": "Logout",
+    "register": "Register",
+    "users": "Users",
+    "socialMedia": "Social Media",
+    "contactUs": "Contact us",
+    "ariaLabels": {
+      "contactUs": "Contact us for more information about VolunChain",
+      "login": "Log in to your VolunChain account",
+      "mobileMenuToggle": "Open navigation menu"
+    }
+  },
+  "hero": {
+    "newBadge": "New",
+    "latestOpportunities": "Take a Look to the Latest",
+    "latestOpportunitiesShort": "Latest",
+    "volunteerOpportunities": "Volunteers Opportunities",
+    "title": "VolunChain: Transforming Volunteering, One Block at a Time",
+    "subtitle": "Organizations post volunteer opportunities, and users join projects they love. Earn unique NFTs as proof of your impact!",
+    "foundationButton": "I'm a Foundation",
+    "volunteerButton": "Start as Volunteer",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "ariaLabels": {
+      "foundationButton": "Sign up as a foundation to post volunteer opportunities",
+      "volunteerButton": "Start volunteering and find opportunities near you",
+      "latestOpportunitiesButton": "View the latest volunteer opportunities available"
+    }
+  },
+  "mission": {
+    "title": "Our Mission",
+    "subtitle": "Revolutionizing Volunteerism with Blockchain",
+    "description": "By using blockchain's transparency and efficiency, we connect volunteers with organizations, fostering collaboration and impactful experiences in a secure and scalable ecosystem.",
+    "points": {
+      "bridge": "We bridge the gap between individuals and organizations.",
+      "motivate": "Motivating engagement rewarding volunteers with innovative incentives like NFT collectibles to recognize and inspire their contributions.",
+      "impact": "Create an impact developing a scalable, community-driven platform where volunteering is accessible and rewarding for everyone."
+    }
+  },
+  "stats": {
+    "title": "Our app connects foundations with volunteers, creating impactful opportunities for both.",
+    "description": "We will help you to achieve the same as a company or volunteer!",
+    "getStarted": "Let's get started",
+    "labels": {
+      "foundations": "Foundations",
+      "users": "Users",
+      "volunteers": "Successful Volunteers",
+      "peopleHelped": "People Helped"
+    },
+    "ariaLabels": {
+      "getStarted": "Get started with VolunChain and begin your volunteering journey"
+    }
+  },
+  "social": {
+    "label": "Social Media",
+    "title": "Join The Chain",
+    "description": "Connect with us on social media and contribute to building a better ecosystem for volunteering. Stay updated, share your thoughts, and collaborate with our growing community!",
+    "platforms": {
+      "twitterDescription": "News and Updates",
+      "telegramDescription": "Discussions",
+      "githubDescription": "Resources"
+    }
+  },
+  "footer": {
+    "description": "VolunChain is a blockchain-powered platform connecting volunteers with organizations. It ensures transparency, security, and rewards participation through incentives like NFT collectibles, fostering collaboration in a Web3-driven ecosystem.",
+    "links": "Links",
+    "exploreVolunteering": "Explore Volunteering",
+    "termsConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "contactUs": "Contact Us",
+    "contact": "Contact",
+    "email": "contact@volunchain.com"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember Me",
+    "signInWith": "Sign in with",
+    "signUpWith": "Sign up with",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "loginSuccess": "Login successful!",
+    "registerSuccess": "Registration successful!"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "overview": "Overview",
+    "myOpportunities": "My Opportunities",
+    "myNFTs": "My NFTs",
+    "statistics": "Statistics",
+    "recentActivity": "Recent Activity"
+  },
+  "opportunities": {
+    "title": "Volunteer Opportunities",
+    "search": "Search opportunities...",
+    "filter": "Filter",
+    "category": "Category",
+    "location": "Location",
+    "date": "Date",
+    "apply": "Apply",
+    "viewDetails": "View Details",
+    "requirements": "Requirements",
+    "description": "Description",
+    "organization": "Organization",
+    "duration": "Duration",
+    "noOpportunities": "No opportunities found"
+  }
+} 

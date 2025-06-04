@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Button from "../ui/Button";
 import {
@@ -6,18 +8,12 @@ import {
   scrollReveal,
 } from "../../animations/variants";
 import CountUp from "@/animations/CountUp";
+import { useTranslation } from "react-i18next";
 
 interface Stat {
   value: string;
-  label: string;
+  labelKey: string;
 }
-
-const stats: Stat[] = [
-  { value: "260", label: "Foundations" },
-  { value: "960", label: "Users" },
-  { value: "231", label: "Successful Volunteers" },
-  { value: "10k", label: "People Helped" },
-];
 
 const parseValue = (value: string) => {
   if (value.endsWith("k")) {
@@ -27,6 +23,15 @@ const parseValue = (value: string) => {
 };
 
 const StatsSection = () => {
+  const { t } = useTranslation();
+
+  const stats: Stat[] = [
+    { value: "260", labelKey: "stats.labels.foundations" },
+    { value: "960", labelKey: "stats.labels.users" },
+    { value: "231", labelKey: "stats.labels.volunteers" },
+    { value: "10k", labelKey: "stats.labels.peopleHelped" },
+  ];
+
   return (
     <motion.section id="users"
       className="text-white mt-[4rem] flex justify-center items-center py-16"
@@ -42,15 +47,19 @@ const StatsSection = () => {
             variants={fadeInUp}
           >
             <motion.h3 className="text-[1.5em]" variants={fadeInUp}>
-              Our app connects foundations with volunteers, creating impactful
-              opportunities for both.
+              {t('stats.title')}
             </motion.h3>
             <motion.p className="text-grey" variants={fadeInUp}>
-              We will help you to achieve the same as a company or volunteer!
+              {t('stats.description')}
             </motion.p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="primary" textColor="black" type="button">
-                Let&apos;s get started
+              <Button 
+                variant="primary" 
+                textColor="black" 
+                type="button"
+                aria-label={t('stats.ariaLabels.getStarted')}
+              >
+                {t('stats.getStarted')}
               </Button>
             </motion.div>
           </motion.div>
@@ -73,7 +82,7 @@ const StatsSection = () => {
                   <span className="text-blue">+</span>
                 </motion.p>
                 <p className="text-sm font-kantumruy sm:text-base">
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </p>
               </motion.div>
             ))}
