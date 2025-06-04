@@ -11,7 +11,11 @@
     "save": "Guardar",
     "edit": "Editar",
     "delete": "Eliminar",
-    "confirm": "Confirmar"
+    "confirm": "Confirmar",
+    "ariaLabels": {
+      "languageSwitcher": "Cambiar idioma",
+      "selectLanguage": "Seleccionar idioma: {{language}}"
+    }
   },
   "navbar": {
     "home": "Inicio",
@@ -24,7 +28,12 @@
     "register": "Registrarse",
     "users": "Usuarios",
     "socialMedia": "Redes Sociales",
-    "contactUs": "Contáctanos"
+    "contactUs": "Contáctanos",
+    "ariaLabels": {
+      "contactUs": "Contáctanos para más información sobre VolunChain",
+      "login": "Inicia sesión en tu cuenta de VolunChain",
+      "mobileMenuToggle": "Abrir menú de navegación"
+    }
   },
   "hero": {
     "newBadge": "Nuevo",
@@ -36,7 +45,12 @@
     "foundationButton": "Soy una Fundación",
     "volunteerButton": "Comenzar como Voluntario",
     "getStarted": "Comenzar",
-    "learnMore": "Saber Más"
+    "learnMore": "Saber Más",
+    "ariaLabels": {
+      "foundationButton": "Regístrate como fundación para publicar oportunidades de voluntariado",
+      "volunteerButton": "Comienza a ser voluntario y encuentra oportunidades cerca de ti",
+      "latestOpportunitiesButton": "Ver las últimas oportunidades de voluntariado disponibles"
+    }
   },
   "mission": {
     "title": "Nuestra Misión",
@@ -57,6 +71,9 @@
       "users": "Usuarios",
       "volunteers": "Voluntarios Exitosos",
       "peopleHelped": "Personas Ayudadas"
+    },
+    "ariaLabels": {
+      "getStarted": "Comienza con VolunChain y empieza tu viaje de voluntariado"
     }
   },
   "social": {

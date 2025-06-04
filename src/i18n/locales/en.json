@@ -11,7 +11,11 @@
     "save": "Save",
     "edit": "Edit",
     "delete": "Delete",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "ariaLabels": {
+      "languageSwitcher": "Change language",
+      "selectLanguage": "Select language: {{language}}"
+    }
   },
   "navbar": {
     "home": "Home",
@@ -24,7 +28,12 @@
     "register": "Register",
     "users": "Users",
     "socialMedia": "Social Media",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "ariaLabels": {
+      "contactUs": "Contact us for more information about VolunChain",
+      "login": "Log in to your VolunChain account",
+      "mobileMenuToggle": "Open navigation menu"
+    }
   },
   "hero": {
     "newBadge": "New",
@@ -36,7 +45,12 @@
     "foundationButton": "I'm a Foundation",
     "volunteerButton": "Start as Volunteer",
     "getStarted": "Get Started",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "ariaLabels": {
+      "foundationButton": "Sign up as a foundation to post volunteer opportunities",
+      "volunteerButton": "Start volunteering and find opportunities near you",
+      "latestOpportunitiesButton": "View the latest volunteer opportunities available"
+    }
   },
   "mission": {
     "title": "Our Mission",
@@ -57,6 +71,9 @@
       "users": "Users",
       "volunteers": "Successful Volunteers",
       "peopleHelped": "People Helped"
+    },
+    "ariaLabels": {
+      "getStarted": "Get started with VolunChain and begin your volunteering journey"
     }
   },
   "social": {
