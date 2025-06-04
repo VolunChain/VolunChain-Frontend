@@ -1,5 +1,8 @@
 // Client-side only i18n configuration
-let i18nInstance: any = null;
+import type { i18n } from 'i18next';
+import { getSupportedLanguageCodes, defaultLanguage } from './languages';
+
+let i18nInstance: i18n | null = null;
 
 const initI18n = async () => {
   if (typeof window === 'undefined') {
@@ -37,7 +40,8 @@ const initI18n = async () => {
         .use(initReactI18next)
         .init({
           resources,
-          fallbackLng: 'en',
+          fallbackLng: defaultLanguage.code,
+          supportedLngs: getSupportedLanguageCodes(),
           debug: false,
           
           detection: {
@@ -72,7 +76,7 @@ export { initI18n };
 // Export a default that will be set after initialization
 export default {
   t: (key: string) => key,
-  language: 'en',
+  language: defaultLanguage.code,
   changeLanguage: () => Promise.resolve(),
   isInitialized: false
 }; 
