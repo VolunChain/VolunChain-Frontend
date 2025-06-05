@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fustat } from "next/font/google";
 import "./globals.css";
 import "./fonts.css";
-import NotificationToast from "@/components/ui/NotificationToast";
-import Providers from "./providers";
 import LayoutContent from "@/components/LayoutContent";
+import Footer from "@/components/Footer";
 
 
 const geistSans = Geist({
@@ -44,13 +43,10 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" sizes="any" />
       </head>
       <body className="flex flex-col justify-between min-h-screen text-text-light overflow-x-hidden">
-        <Providers>
-          <NotificationToast />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </Providers>
         <LayoutContent>
-          {children}
+          <main>
+            {children}
+          </main>
         </LayoutContent>
       </body>
     </html>
