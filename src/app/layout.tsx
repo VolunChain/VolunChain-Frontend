@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fustat } from "next/font/google";
 import "./globals.css";
 import "./fonts.css";
-import NotificationToast from "@/components/ui/NotificationToast";
-import Providers from "./providers";
 import LayoutContent from "@/components/LayoutContent";
 import Footer from "@/components/Footer";
+import Providers from "./providers";
+import NotificationToast from "@/components/ui/NotificationToast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
