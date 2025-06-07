@@ -32,16 +32,17 @@ const AccountInformation = () => {
         Account Information
       </h2>
 
-      <div className="p-10 bg-[#0F112A] rounded-2xl text-white shadow-lg space-y-10">
+      <div className="p-10 bg-[#0F112A] rounded-2xl dark:text-white shadow-lg space-y-10">
         <div className="flex items-center space-x-6">
           <ProfilePicture src={formData.profilePicture} />
         </div>
 
         <div className="grid grid-cols-2 gap-y-8 gap-x-12">
-
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">First Name</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                First Name
+              </label>
               <div className="flex items-center text-gray-400">
                 <Pencil size={16} className="mr-1" />
                 <span className="text-sm">Edit</span>
@@ -58,7 +59,9 @@ const AccountInformation = () => {
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">Email</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                Email
+              </label>
               <div className="flex items-center space-x-2 text-[#60A5FA]">
                 <div className="w-5 h-5 bg-[#60A5FA] flex items-center justify-center rounded-full text-black font-bold">
                   ✔
@@ -77,7 +80,9 @@ const AccountInformation = () => {
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">Last Name</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                Last Name
+              </label>
               <div className="flex items-center text-gray-400">
                 <Pencil size={16} className="mr-1" />
                 <span className="text-sm">Edit</span>
@@ -94,7 +99,9 @@ const AccountInformation = () => {
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">Phone</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                Phone
+              </label>
               <div className="flex items-center text-gray-400">
                 <Pencil size={16} className="mr-1" />
                 <span className="text-sm">Edit</span>
@@ -111,7 +118,9 @@ const AccountInformation = () => {
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">Country</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                Country
+              </label>
               <div className="flex items-center text-gray-400">
                 <Pencil size={16} className="mr-1" />
                 <span className="text-sm">Edit</span>
@@ -128,7 +137,9 @@ const AccountInformation = () => {
 
           <div className="relative flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">Date of Birth</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                Date of Birth
+              </label>
               <div className="flex items-center text-gray-400">
                 <Pencil size={16} className="mr-1" />
                 <span className="text-sm">Edit</span>
@@ -137,13 +148,17 @@ const AccountInformation = () => {
             <DateField
               name="dateOfBirth"
               value={formData.dateOfBirth}
-              onChange={(date) => handleChange("dateOfBirth", date ?? new Date())}
+              onChange={(date) =>
+                handleChange("dateOfBirth", date ?? new Date())
+              }
             />
           </div>
 
           <div className="relative flex flex-col gap-2 w-full col-span-2">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium text-[#53ACEC]">Biography</label>
+              <label className="text-sm font-medium text-[#53ACEC]">
+                Biography
+              </label>
               <div className="flex items-center text-gray-400">
                 <Pencil size={16} className="mr-1" />
                 <span className="text-sm">Edit</span>
@@ -160,9 +175,7 @@ const AccountInformation = () => {
         </div>
 
         <div className="flex justify-end mt-6">
-          <Button variant="primary">
-            Save Changes
-          </Button>
+          <Button variant="primary">Save Changes</Button>
         </div>
       </div>
     </div>

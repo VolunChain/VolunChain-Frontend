@@ -6,6 +6,7 @@ import Button from "../ui/Button";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { Menu } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const LandingNavbar = () => {
   const { t } = useTranslation();
@@ -14,24 +15,24 @@ const LandingNavbar = () => {
   const toggleMenu = (): void => setIsMenuOpen((prevState) => !prevState);
 
   const menuItems = [
-    { path: "#home", label: t('navbar.home') },
-    { path: "#mission", label: t('mission.title') },
-    { path: "#users", label: t('navbar.users') },
-    { path: "#social-media", label: t('navbar.socialMedia') },
+    { path: "#home", label: t("navbar.home") },
+    { path: "#mission", label: t("mission.title") },
+    { path: "#users", label: t("navbar.users") },
+    { path: "#social-media", label: t("navbar.socialMedia") },
   ];
 
   return (
     <nav className="w-full flex items-center justify-between p-6 mt-[-10px]">
       {" "}
-      <Link href="/" className="text-white text-2xl font-semibold">
+      <Link href="/" className="dark:text-white text-2xl font-semibold">
         <div className="w-40 lg:w-[226px] lg:h-[113px]">
           <img src="/logo.svg" className="w-full h-full" alt="logo" />
         </div>
       </Link>
-      <div className="lg:hidden text-white">
-        <Menu 
-          onClick={toggleMenu} 
-          aria-label={t('navbar.ariaLabels.mobileMenuToggle')}
+      <div className="lg:hidden dark:text-white">
+        <Menu
+          onClick={toggleMenu}
+          aria-label={t("navbar.ariaLabels.mobileMenuToggle")}
           role="button"
           tabIndex={0}
         />
@@ -62,7 +63,9 @@ const LandingNavbar = () => {
                 setIsMenuOpen(false);
               }}
             >
-              <p className="text-white text-lg font-semibold">{link.label}</p>
+              <p className="dark:dark:text-white text-lg font-semibold">
+                {link.label}
+              </p>
             </Link>
           ))}
         </div>
@@ -71,23 +74,26 @@ const LandingNavbar = () => {
           <div className="lg:mr-2">
             <LanguageSwitcher />
           </div>
+          <div className="lg:mr-2">
+            <ThemeToggle />
+          </div>
           <Button
             variant="secondary"
             className="border-2 border-secondary text-secondary"
             textColor="secondary"
             type="button"
-            aria-label={t('navbar.ariaLabels.contactUs')}
+            aria-label={t("navbar.ariaLabels.contactUs")}
           >
-            {t('navbar.contactUs')}
+            {t("navbar.contactUs")}
           </Button>
           <Button
             variant="primary"
             className="bg-primary border border-primary"
             textColor="black"
             type="button"
-            aria-label={t('navbar.ariaLabels.login')}
+            aria-label={t("navbar.ariaLabels.login")}
           >
-            {t('navbar.login')}
+            {t("navbar.login")}
           </Button>
         </div>
       </div>

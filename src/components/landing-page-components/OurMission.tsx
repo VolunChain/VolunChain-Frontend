@@ -2,20 +2,26 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, listItemReveal, scrollReveal } from "../../animations/variants";
+import {
+  fadeInUp,
+  staggerContainer,
+  listItemReveal,
+  scrollReveal,
+} from "../../animations/variants";
 import { useTranslation } from "react-i18next";
 
 const OurMission = () => {
   const { t } = useTranslation();
 
   const missionPoints = [
-    t('mission.points.bridge'),
-    t('mission.points.motivate'),
-    t('mission.points.impact')
+    t("mission.points.bridge"),
+    t("mission.points.motivate"),
+    t("mission.points.impact"),
   ];
 
   return (
-    <motion.section id="mission"
+    <motion.section
+      id="mission"
       className="mt-16 py-16 px-6"
       initial="hidden"
       whileInView="visible"
@@ -23,29 +29,26 @@ const OurMission = () => {
       variants={scrollReveal}
     >
       <div className="container mx-auto text-center max-w-5xl">
-        <motion.div
-          className="mb-8"
-          variants={fadeInUp}
-        >
+        <motion.div className="mb-8" variants={fadeInUp}>
           <motion.h2
             className="text-2xl text-[#73B9EB] mb-2"
             variants={fadeInUp}
           >
-            {t('mission.title')}
+            {t("mission.title")}
           </motion.h2>
           <motion.h3
-            className="text-3xl md:text-5xl font-bold text-white"
+            className="text-3xl md:text-5xl font-bold dark:text-white"
             variants={fadeInUp}
           >
-            {t('mission.subtitle')}
+            {t("mission.subtitle")}
           </motion.h3>
         </motion.div>
 
         <motion.p
-          className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto"
+          className="text-lg dark:text-white text-gray-600 mb-12 max-w-3xl mx-auto"
           variants={fadeInUp}
         >
-          {t('mission.description')}
+          {t("mission.description")}
         </motion.p>
 
         <motion.div
@@ -66,7 +69,7 @@ const OurMission = () => {
           </motion.div>
 
           <motion.ul
-            className="text-left text-gray-300 space-y-12 md:w-1/2"
+            className="text-left dark:text-white text-gray-600 space-y-12 md:w-1/2"
             variants={staggerContainer}
           >
             {missionPoints.map((text, index) => (

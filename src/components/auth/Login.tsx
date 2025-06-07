@@ -37,7 +37,7 @@ export default function Login() {
         <div className="p-16 md:p-24 bg-[#0F112B] rounded-tr-[30px] rounded-br-[30px]">
           <p className="text-[#7C88B1] text-lg mb-6">Welcome back</p>
 
-          <h1 className="text-white text-4xl font-bold mb-6">
+          <h1 className="dark:text-white text-4xl font-bold mb-6">
             Sign In to VolunChain
           </h1>
 
@@ -85,7 +85,7 @@ export default function Login() {
               />
             </div>
 
-            <button className="w-full flex items-center justify-center gap-6 bg-[#EF565D] text-white rounded-full py-4 hover:bg-[#EF565F]/90 transition-colors text-lg">
+            <button className="w-full flex items-center justify-center gap-6 bg-[#EF565D] dark:text-white rounded-full py-4 hover:bg-[#EF565F]/90 transition-colors text-lg">
               Log In
             </button>
           </div>

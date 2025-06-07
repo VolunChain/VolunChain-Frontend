@@ -6,6 +6,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -20,8 +21,8 @@ export default {
         bgsecondary: "var(--bg-secondary)",
       },
       fontFamily: {
-        fustat: ['var(--font-fustat)', 'sans-serif'],
-        kantumruy: ['Kantumruy', 'var(--font-fustat)', 'sans-serif'],
+        fustat: ["var(--font-fustat)", "sans-serif"],
+        kantumruy: ["Kantumruy", "var(--font-fustat)", "sans-serif"],
       },
     },
   },

@@ -53,7 +53,7 @@ export default function DogProfileCard() {
           </div>
 
           <div className="mt-12 text-center">
-            <h3 className="text-lg font-semibold text-white">
+            <h3 className="text-lg font-semibold dark:text-white">
               Dog Goods for Good Dogs
             </h3>
             <p className="text-sm text-gray-400">@good_goods</p>
@@ -61,21 +61,21 @@ export default function DogProfileCard() {
 
           <div className="flex justify-between mt-6 text-center">
             <div className="flex-1">
-              <p className="text-lg font-bold text-white">231k</p>
+              <p className="text-lg font-bold dark:text-white">231k</p>
               <p className="text-xs text-gray-400">Followers</p>
             </div>
             <div className="flex-1">
-              <p className="text-lg font-bold text-white">321</p>
+              <p className="text-lg font-bold dark:text-white">321</p>
               <p className="text-xs text-gray-400">Posts</p>
             </div>
             <div className="flex-1">
-              <p className="text-lg font-bold text-white">34</p>
+              <p className="text-lg font-bold dark:text-white">34</p>
               <p className="text-xs text-gray-400">NFTs</p>
             </div>
           </div>
 
           <div className="flex justify-center mt-6">
-            <button className="px-[8rem] py-1.5 bg-[#2795DD] hover:bg-blue-600 text-blue-600 hover:text-white font-medium rounded-full transition-colors border-2 border-[#2795DD] text-sm">
+            <button className="px-[8rem] py-1.5 bg-[#2795DD] hover:bg-blue-600 text-blue-600 hover:dark:text-white font-medium rounded-full transition-colors border-2 border-[#2795DD] text-sm">
               Follow
             </button>
           </div>
@@ -83,7 +83,7 @@ export default function DogProfileCard() {
       </div>
 
       <div className="w-full max-w-sm overflow-hidden rounded-lg bg-gray-900 shadow-lg p-6 mb-2">
-        <h3 className="text-lg font-semibold text-white mb-2">About</h3>
+        <h3 className="text-lg font-semibold dark:text-white mb-2">About</h3>
         <p className="text-sm text-gray-400">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -95,7 +95,9 @@ export default function DogProfileCard() {
 
       <div className="w-full max-w-sm overflow-hidden rounded-lg bg-gray-900 shadow-lg p-6">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold text-white">People also like</h3>
+          <h3 className="text-lg font-semibold dark:text-white">
+            People also like
+          </h3>
           <a href="#" className="text-sm text-sky-500 hover:text-blue-400">
             See All
           </a>
@@ -115,7 +117,7 @@ export default function DogProfileCard() {
                   />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-white">
+                  <p className="text-sm font-medium dark:text-white">
                     {profile.name}
                   </p>
                   <p className="text-xs text-gray-400">{profile.description}</p>

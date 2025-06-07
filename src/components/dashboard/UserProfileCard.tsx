@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Button from "@/components/ui/Button"
-import Card from "@/components/ui/Card"
+import Image from "next/image";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 interface ProfileCardProps {
-  name?: string
-  username?: string
-  hoursSpent?: number
-  volunteering?: number
-  nfts?: number
-  profileImage?: string
-  bannerImage?: string
+  name?: string;
+  username?: string;
+  hoursSpent?: number;
+  volunteering?: number;
+  nfts?: number;
+  profileImage?: string;
+  bannerImage?: string;
 }
 
 export default function UserProfileCard({
@@ -23,14 +23,14 @@ export default function UserProfileCard({
   bannerImage = "/placeholders/cover-image.png",
 }: ProfileCardProps) {
   return (
-    <Card className="w-full overflow-hidden  text-white">
+    <Card className="w-full overflow-hidden  dark:text-white">
       <div className="relative h-[140px] ">
-        <Image 
-          src={bannerImage} 
-          alt="Profile banner" 
-          fill 
-          className="object-cover rounded-xl" 
-          priority 
+        <Image
+          src={bannerImage}
+          alt="Profile banner"
+          fill
+          className="object-cover rounded-xl"
+          priority
         />
 
         <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
@@ -59,7 +59,9 @@ export default function UserProfileCard({
         </div>
         <div className="text-center">
           <p className="text-lg font-bold">{volunteering}</p>
-          <p className="text-[0.7875rem] text-gray-400">Attended Volunteering</p>
+          <p className="text-[0.7875rem] text-gray-400">
+            Attended Volunteering
+          </p>
         </div>
         <div className="text-center">
           <p className="text-lg font-bold">{nfts}</p>
@@ -68,14 +70,10 @@ export default function UserProfileCard({
       </div>
 
       <div className="p-4">
-        <Button        
-          variant="tertiary"
-          className="w-full"
-        >
+        <Button variant="tertiary" className="w-full">
           See Profile
         </Button>
       </div>
     </Card>
-  )
+  );
 }
-
