@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fustat } from "next/font/google";
 import "./globals.css";
 import "./fonts.css";
-import LayoutContent from "@/components/LayoutContent";
 import Footer from "@/components/Footer";
 import Providers from "./providers";
 import NotificationToast from "@/components/ui/NotificationToast";
+import I18nProvider from "@/components/I18nProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,11 +45,12 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col justify-between min-h-screen text-text-light overflow-x-hidden">
         <Providers>
-          <NotificationToast />
-          <main className="flex-grow">{children}</main>
-          <Footer />
+          <I18nProvider>
+            <NotificationToast />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </I18nProvider>
         </Providers>
-        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );
