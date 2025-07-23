@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Globe } from "lucide-react";
-import { useLanguage } from "@/hooks/useLanguage";
-import { languages, getLanguageByCode } from "@/i18n/languages";
+import { useLanguage } from "@/shared/hooks/useLanguage";
+import { languages, getLanguageByCode } from "@/shared/utils/languages";
 
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();

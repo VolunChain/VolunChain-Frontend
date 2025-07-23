@@ -1,8 +1,8 @@
-import Notfound from "@/components/ui/Notfound";
+import Notfound from "@/shared/components/ui/Notfound";
 import React from "react";
 
 const Page = () => {
-   return <Notfound />;
+  return <Notfound />;
 };
 
 export default Page;
