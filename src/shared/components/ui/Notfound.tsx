@@ -2,15 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import DashboardNav from "../dashboard/DashboardNav";
-import NotFound from "../../../public/404image.png";
+// import DashboardNav from "../dashboard/DashboardNav";
 
 const Notfound = () => {
   const router = useRouter();
 
   return (
     <div className="flex flex-col justify-between min-h-screen bg-[#07081F] dark:text-white relative">
-      <DashboardNav />
+      {/* <DashboardNav /> */}
 
       <div className="flex flex-col items-center flex-grow relative px-4 text-center mt-24">
         <h1 className="text-3xl sm:text-4xl font-bold max-w-[90%] sm:max-w-[70%] leading-tight">
@@ -30,7 +29,7 @@ const Notfound = () => {
 
         <div className="relative max-w-lg w-full mt-20">
           <Image
-            src={NotFound}
+            src="/404image.png"
             alt="Not Found"
             className="w-full h-auto object-contain"
             priority
