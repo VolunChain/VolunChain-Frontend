@@ -37,9 +37,12 @@ export default function LoginPage() {
                 onSubmit={handleSubmit}
                 className="bg-tertiary/90 p-8 rounded-2xl shadow-xl w-full max-w-md border border-[#23264a]"
             >
-                <h2 className="text-3xl font-extrabold mb-8 text-center dark:text-white tracking-tight">
-                    {t("auth.login")}
+                <h2 className="text-3xl font-extrabold mb-2 text-center dark:text-white tracking-tight">
+                    Welcome Back
                 </h2>
+                <p className="text-center text-gray-300 mb-6">
+                    Login to your VolunChain account
+                </p>
                 <div className="space-y-4">
                   <Input
                       type="email"

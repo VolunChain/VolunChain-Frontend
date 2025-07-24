@@ -44,9 +44,12 @@ export default function SignupPage() {
                 onSubmit={handleSubmit}
                 className="bg-tertiary/90 p-8 rounded-2xl shadow-xl w-full max-w-md border border-[#23264a]"
             >
-                <h2 className="text-3xl font-extrabold mb-8 text-center dark:text-white tracking-tight">
-                    {t("auth.register")}
+                <h2 className="text-3xl font-extrabold mb-2 text-center dark:text-white tracking-tight">
+                    Welcome to VolunChain
                 </h2>
+                <p className="text-center text-gray-300 mb-6">
+                    Create your account and start making a difference
+                </p>
 
                 <div className="space-y-4">
                     <Select
