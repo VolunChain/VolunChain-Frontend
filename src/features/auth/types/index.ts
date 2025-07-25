@@ -1,6 +1,13 @@
+export interface User {
+  id: string;
+  email: string;
+  name?: string;
+  // Add other user properties as needed
+}
+
 export interface Auth {
   token: string;
-  user: any; // Replace 'any' with a proper user type
+  user: User;
 }
 
 export type AuthCredentials = {

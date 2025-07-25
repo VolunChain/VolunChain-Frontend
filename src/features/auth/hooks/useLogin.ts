@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Auth, AuthCredentials } from "../types";
-import { useAuthStore } from "../../../shared/utils/zustand/useAuthStore";
+import { useAuthStore } from "../../../shared/utils/zustand/useAuthStore"; //
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
@@ -17,9 +17,12 @@ export const useLogin = () => {
       authStore.login(user, token);
       router.push("/wallet-connect");
     },
-    onError: () => {
-      toast.error("Login failed. Please check your credentials and try again.");
-    },
+    onError: (error: any) => {
+      const message = error?.response?.data?.message || 
+                     error?.message || 
+                     "Login failed. Please check your credentials and try again.";
+      toast.error(message);
+     },
   });
 
   return mutation;

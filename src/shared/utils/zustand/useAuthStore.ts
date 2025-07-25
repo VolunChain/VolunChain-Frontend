@@ -1,7 +1,8 @@
+import { User } from "@/features/auth/types";
 import { create } from "zustand";
 
 interface AuthState {
-  user: any; // Replace 'any' with a proper user type
+  user: User | null;
   token: string | null;
   login: (user: any, token: string) => void;
   logout: () => void;
