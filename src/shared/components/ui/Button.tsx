@@ -7,6 +7,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   textColor?: "white" | "black" | "primary" | "secondary" | "blue";
   className?: string;
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
   textColor = "white",
   type = "button",
   className,
+  disabled = false,
 }: ButtonProps) => {
   return (
     <button
@@ -36,9 +38,11 @@ const Button = ({
           "border-2 border-link bg-link": variant === "tertiary",
           "w-full flex items-center justify-center gap-6 bg-transparent border border-[#73b9eb] hover:bg-[#73b9eb]/10 transition-colors":
             variant === "outline",
+          "opacity-50 cursor-not-allowed": disabled,
         }
       )}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

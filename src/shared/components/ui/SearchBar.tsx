@@ -17,6 +17,7 @@ export default function SearchBar() {
       />
       <div className="absolute right-[6px] top-[6px]">
         <button
+        aria-label="Search"
           type="button"
           className="flex h-[36px] w-[36px] items-center justify-center rounded-md bg-[#7DD3FC] text-gray-900 transition-colors"
           onClick={() => {}}

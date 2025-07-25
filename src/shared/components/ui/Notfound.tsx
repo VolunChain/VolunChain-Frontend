@@ -31,6 +31,8 @@ const Notfound = () => {
           <Image
             src="/404image.png"
             alt="Not Found"
+            width={600}
+            height={400}
             className="w-full h-auto object-contain"
             priority
           />
