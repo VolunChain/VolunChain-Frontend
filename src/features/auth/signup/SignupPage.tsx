@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { GoogleLoginButton } from "@/features/auth/components/GoogleLoginButton";
 import Link from "next/link";
+import { showError, showSuccess } from "@/shared/utils/toast";
 
 type UserType = "volunteer" | "foundation" | "";
 
@@ -21,9 +22,7 @@ export default function SignupPage() {
         e.preventDefault();
         
         if (!userType || !email || !password || !name) {
-            import('@/shared/utils/toast').then(({ showError }) => {
-                showError('Please fill in all required fields.');
-            });
+            showError('Please fill in all required fields.');
             return;
         }
 
@@ -32,9 +31,7 @@ export default function SignupPage() {
         // Signup API connection
         setTimeout(() => {
             setLoading(false);
-            import('@/shared/utils/toast').then(({ showSuccess }) => {
-                showSuccess('Account created successfully!');
-            });
+            showSuccess('Account created successfully!');
         }, 1000);
     };
 

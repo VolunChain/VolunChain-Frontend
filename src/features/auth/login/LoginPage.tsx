@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { GoogleLoginButton } from "@/features/auth/components/GoogleLoginButton";
 import Link from "next/link";
+import { showError, showSuccess } from "@/shared/utils/toast";
 
 export default function LoginPage() {
     const { t } = useTranslation();
@@ -16,18 +17,14 @@ export default function LoginPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email || !password) {
-            import('@/shared/utils/toast').then(({ showError }) => {
-                showError('Email and password are required.');
-            });
+            showError('Email and password are required.');
             return;
         }
         setLoading(true);
         // login api connection
         setTimeout(() => {
             setLoading(false);
-            import('@/shared/utils/toast').then(({ showSuccess }) => {
-                showSuccess('Login successful!');
-            });
+            showSuccess('Login successful!');
         }, 1000);
     };
 
