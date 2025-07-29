@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import toast from 'react-hot-toast';
+import { toast } from "sonner";
 import type { UseMutationResult } from '@tanstack/react-query';
 
 interface ToastConfig {
@@ -44,12 +44,10 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
 
     if (mutation.status === 'success') {
       toast.success(
-        (t) => (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontSize: '20px' }}>{}</span>
-            <span>{successMessage}</span>
-          </div>
-        ),
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{ fontSize: '20px' }}>{config.successIcon ?? '✅'}</span>
+          <span>{successMessage}</span>
+        </div>,
         {
           duration,
           position,
@@ -68,12 +66,10 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
         ? mutation.error.message
         : errorMessage;
       toast.error(
-        (t) => (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontSize: '20px' }}>{}</span>
-            <span>{message}</span>
-          </div>
-        ),
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{ fontSize: '20px' }}>{config.errorIcon ?? '⚠️'}</span>
+          <span>{message}</span>
+        </div>,
         {
           duration,
           position,
@@ -86,7 +82,7 @@ const useMutationToast = <TData, TError, TVariables, TContext>(
         }
       );
     }
-  }, [mutation.status, mutation.error, successMessage, errorMessage, duration, position, style, ]);
+  }, [mutation.status, mutation.error, successMessage, errorMessage, duration, position, style, config.successIcon, config.errorIcon]);
 
   return mutation;
 };
