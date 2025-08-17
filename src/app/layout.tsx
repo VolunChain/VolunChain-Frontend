@@ -32,6 +32,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${fustat.variable}`}
     >
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

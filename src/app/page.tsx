@@ -1,12 +1,12 @@
 "use client";
 
-<<<<<<< HEAD
 import React from 'react'
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa";
 import { PiShareFatLight } from "react-icons/pi";
 import { IoBookmarkOutline } from "react-icons/io5";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -53,18 +53,7 @@ export default function Home() {
           <IoBookmarkOutline className="text-white text-xl cursor-pointer" />
         </div>
       </div>
+      <Footer />
     </main>
   )
-=======
-import Footer from "@/components/Footer";
-
-
-export default function Home() {
-
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 lg:p-30 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Footer />
-    </div>
-  );
->>>>>>> d817cf1bb7a65ffb5fa757b7303f4bde14d6e4db
 }
