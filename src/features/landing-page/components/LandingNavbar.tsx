@@ -7,6 +7,7 @@ import LanguageSwitcher from "@/shared/components/ui/LanguageSwitcher";
 import { Menu } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+
 const LandingNavbar = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -82,15 +83,17 @@ const LandingNavbar = () => {
           >
             {t("navbar.contactUs")}
           </Button>
-          <Button
-            variant="primary"
-            className="bg-primary border border-primary"
-            textColor="black"
-            type="button"
-            aria-label={t("navbar.ariaLabels.login")}
-          >
-            {t("navbar.login")}
-          </Button>
+          <Link href="/login">
+            <Button
+              variant="primary"
+              className="bg-primary border border-primary"
+              textColor="black"
+              type="button"
+              aria-label={t("navbar.ariaLabels.login")}
+            >
+              {t("navbar.login")}
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

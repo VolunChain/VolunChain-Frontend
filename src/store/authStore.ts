@@ -44,6 +44,7 @@ const customStorage = createJSONStorage<PersistedState>(() => ({
       const parsedValue = JSON.parse(value) as PersistedState;
       setItem(name, parsedValue);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error parsing value for localStorage:", error);
     }
   },
