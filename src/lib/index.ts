@@ -13,3 +13,6 @@ export type {
   ServiceOptions, 
   WriteResult 
 } from './services/availabilityScheduler.service';
+
+// Export DAO Governance service
+export { DaoGovernanceService, daoGovernanceService } from './services/daoGovernance.service';
