@@ -2,15 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import DashboardNav from "../dashboard/DashboardNav";
+import Button from "@/shared/components/ui/Button";
 
 const Notfound = () => {
   const router = useRouter();
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-[#07081F] dark:text-white relative">
-      {/* <DashboardNav /> */}
-
       <div className="flex flex-col items-center relative px-4 text-center">
         <h1 className="text-3xl sm:text-4xl font-bold max-w-[90%] sm:max-w-[70%] leading-tight">
           Oops! It seems this page <br /> can’t be reached...
@@ -39,6 +37,15 @@ const Notfound = () => {
           <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0B0E1E] via-[#0F1327] to-transparent opacity-90"></div>
         </div>
       </div>
+        <Button
+          variant="primary"
+          textColor="white"
+          className="mt-8 z-10"
+          onClick={() => router.push("/")}
+          aria-label="Go to homepage"
+        >
+          Go to Homepage
+        </Button>
     </div>
   );
 };
