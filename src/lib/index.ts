@@ -14,5 +14,7 @@ export type {
   WriteResult 
 } from './services/availabilityScheduler.service';
 
+// Export DAO Governance service
+export { DaoGovernanceService, daoGovernanceService } from './services/daoGovernance.service';
 // Export goal tracker service
 export { GoalTrackerService, goalTrackerService } from './services/goalTracker.service';
