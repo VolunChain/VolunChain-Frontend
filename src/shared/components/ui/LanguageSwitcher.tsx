@@ -9,9 +9,11 @@ import { languages, getLanguageByCode } from "@/shared/utils/languages";
 
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage: langFromHook } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Set default language to English if no preference is detected
+  const currentLanguage = langFromHook || "en";
   const currentLang = getLanguageByCode(currentLanguage);
 
   const handleLanguageChange = (languageCode: string) => {
@@ -25,9 +27,8 @@ export default function LanguageSwitcher() {
     setIsOpen(false);
   };
 
-  // Simple client-side check without state
   if (typeof window === "undefined") {
-    // Return a fallback during SSR
+    // Fallback during SSR
     return (
       <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-primary border border-gray-700">
         <Globe size={16} className="text-secondary" />
@@ -70,13 +71,10 @@ export default function LanguageSwitcher() {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <div
               className="fixed inset-0 z-10"
               onClick={() => setIsOpen(false)}
             />
-
-            {/* Dropdown */}
             <motion.div
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
