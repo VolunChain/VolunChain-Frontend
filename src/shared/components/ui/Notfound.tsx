@@ -8,10 +8,10 @@ const Notfound = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col justify-between min-h-screen bg-[#07081F] dark:text-white relative">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#07081F] dark:text-white relative">
       {/* <DashboardNav /> */}
 
-      <div className="flex flex-col items-center flex-grow relative px-4 text-center mt-24">
+      <div className="flex flex-col items-center relative px-4 text-center">
         <h1 className="text-3xl sm:text-4xl font-bold max-w-[90%] sm:max-w-[70%] leading-tight">
           Oops! It seems this page <br /> can’t be reached...
         </h1>
