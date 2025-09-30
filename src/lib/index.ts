@@ -13,3 +13,6 @@ export type {
   ServiceOptions, 
   WriteResult 
 } from './services/availabilityScheduler.service';
+
+// Export goal tracker service
+export { GoalTrackerService, goalTrackerService } from './services/goalTracker.service';
