@@ -22,7 +22,7 @@ const fustat = Fustat({
 });
 
 export const metadata: Metadata = {
-  title: "Volunchain",
+  title:  "VolunChain - Decentralized Volunteering",
   description:
     "A platform revolutionizing volunteer work with blockchain technology, connecting volunteers and organizations with transparency and efficiency.",
   keywords: "Volunteering, Blockchain, NFTs, Community, Charity",
