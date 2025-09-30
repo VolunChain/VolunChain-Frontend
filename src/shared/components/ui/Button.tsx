@@ -8,6 +8,7 @@ interface ButtonProps {
   textColor?: "white" | "black" | "primary" | "secondary" | "blue";
   className?: string;
   disabled?: boolean;
+  "aria-label"?: string; // 👈 soporte accesibilidad
 }
 
 const Button = ({
@@ -18,6 +19,7 @@ const Button = ({
   type = "button",
   className,
   disabled = false,
+  ...rest // 👈 capturamos aria-label y cualquier otro atributo nativo
 }: ButtonProps) => {
   return (
     <button
@@ -43,6 +45,7 @@ const Button = ({
       )}
       onClick={onClick}
       disabled={disabled}
+      {...rest} // 👈 aquí se pasa aria-label al botón
     >
       {children}
     </button>
